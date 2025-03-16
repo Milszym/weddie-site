@@ -15,6 +15,15 @@ export const lightTheme = createTheme({
             dark: '#94AE98',
             contrastText: '#fff',
         },
+    },
+    typography: {
+        fontFamily: "'Cormorant', serif",
+        h1: {
+            fontFamily: "'Great Vibes', serif",
+        },
+        body1: {
+            fontFamily: "'Cormorant', serif",
+        },
     }
 })
 
