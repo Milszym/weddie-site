@@ -34,6 +34,13 @@
         "title": "Domain Instructions"
     },
     "contact": {
-        "title": "Contact"
+        "title": "Contact",
+        "description": "Call us or contact us on Instagram, WhatsApp, Messenger, or simply use the form and let's start creating your website.",
+        "contactLabel": "Contact",
+        "contactPlaceholder": "Email or phone number",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Write about your chosen offer. Tell us about your wedding or simply write a message to setup a meeting with us 😊",
+        "send": "Send message",
+        "phoneNumber": "+48 665 123 549"
     }
 }

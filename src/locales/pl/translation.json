@@ -17,7 +17,7 @@
         "instructions": {
             "step1": "Wybierzcie sami lub z naszą pomocą jeden z szablonów:",
             "step2": "Zdecydujcie, które elementy szablonu chcecie zostawić, a które usunąć.",
-            "step3": "Przemyślcie pod jakim adresem chcielibyście mieć stronę.  Więcej o adresach przeczytacie poniżej:",
+            "step3": "Przemyślcie pod jakim adresem chcielibyście mieć stronę. Więcej o adresach przeczytacie poniżej:",
             "step4": "Skontaktujcie się z nami, opowiedzcie o stylu Waszego wesela, a my przerobimy kolorystykę szablonu pod Was!"
         },
         "firstTemplate": "Pure Joy",
@@ -34,6 +34,13 @@
         "title": "Adresy strony"
     },
     "contact": {
-        "title": "Kontakt"
+        "title": "Kontakt",
+        "description": "Zadzwoń do nas lub skontaktuj się z nami na Instagramie, WhatsAppie, Messengerze lub po prostu skorzystaj z formularza i rozpocznijmy tworzenie Waszej strony internetowej.",
+        "contactLabel": "Kontakt",
+        "contactPlaceholder": "Email lub numer telefonu",
+        "messageLabel": "Wiadomość",
+        "messagePlaceholder": "Napiszcie o wybranym pakiecie. Opowiedzcie o stylu Waszego ślubu i wesela lub po prostu napiszcie do nas  żeby umówić z nami spotkanie 😊",
+        "send": "Wyślij wiadomość",
+        "phoneNumber": "+48 665 123 549"
     }
 }
