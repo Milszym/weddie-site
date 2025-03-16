@@ -1,11 +1,13 @@
-/* eslint-disable react/react-in-jsx-scope -- Unaware of jsxImportSource */
-/** @jsxImportSource @emotion/react */
+import { useTranslation } from "react-i18next"
 import { Fullscreen } from "../../components/Fullscreen"
-import { MyButton } from "../../components/MyButton"
+import { MyButton } from "../../components/button/MyButton"
+import { MyHeader } from "../../components/text/MyHeader"
 
 export const Title = () => {
+    const { t } = useTranslation()
+
     return <Fullscreen>
-        <h1>Weddie Site</h1>
-        <MyButton text={'Sample button'}/>
+        <MyHeader text={t('title.title')} />
+        <MyButton text={t('title.button')} />
     </Fullscreen>
 }
