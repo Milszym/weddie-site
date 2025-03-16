@@ -5,7 +5,7 @@ import { withMyTheme } from "../../theme/theme";
 
 const HeaderStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.main};
-    font-size: 32px;
+    font-size: 52px;
     fontWeight: 700;
     font-family: ${theme.typography.h1.fontFamily}
 `)
@@ -15,8 +15,7 @@ interface MyButtonProps {
 }
 
 export const MyHeader = ({ text }: MyButtonProps) => {
-    return <span
-        css={HeaderStyle}>
+    return <span css={HeaderStyle}>
         {text}
     </span>
 }

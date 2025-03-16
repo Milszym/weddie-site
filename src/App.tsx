@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Title } from './ui/landing/title/Title';
 import { lightTheme } from './ui/theme/theme';
 import { ThemeProvider } from '@emotion/react';
+import { AppContent } from './ui/AppContent';
 
 const App = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <Title />
+      <AppContent />
     </ThemeProvider>
   );
 };

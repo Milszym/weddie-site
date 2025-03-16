@@ -2,5 +2,12 @@
     "title": {
         "title": "Weddie' Site",
         "button": "Sample button"
+    },
+    "siteOffers": {
+        "title": "Pakiety",
+        "firstOffer": "Wujek na weselu",
+        "firstOfferDescription": "Tak jak wujek na weselu nie potrzebuje wiele, tak ten pakiet pokrywa podstawowe potrzeby jakie mogą być dodane do Waszej strony internetowej!",
+        "secondOffer": "Przebojowa Ciotka",
+        "secondOfferDescription": "Opowiedzcie nam o stylu Waszego wesela, opcjonalnie pokażcie inspiracje, a my stworzymy dla Was coś unikatowego."
     }
 }

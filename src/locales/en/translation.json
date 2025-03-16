@@ -2,5 +2,18 @@
     "title": {
         "title": "Weddie' Site",
         "button": "Sample button"
+    },
+    "siteOffers": {
+        "title": "Site Offers",
+        "firstOffer": "Uncle on a wedding",
+        "firstOfferDescription": "Just like the uncle at the wedding doesn't need much, this package covers the basic needs that can be added to your website!",
+        "secondOffer": "Rocking Aunt",
+        "secondOfferDescription": "Tell us about the style of your wedding, optionally share some inspirations, and we will create something unique for you."
+    },
+    "uncleOnAWedding": {
+        "title": "Uncle on a wedding"
+    },
+    "rockingAunt": {
+        "title": "Rocking aunt"
     }
 }
