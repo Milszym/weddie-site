@@ -1,7 +1,10 @@
 {
     "title": {
-        "title": "Weddie' Site",
-        "button": "Sample button"
+        "titlePart1": "Weddie ",
+        "titlePart2": "' ",
+        "titlePart3": "Site",
+        "subtitle": "Websites for Marriage & Wedding",
+        "description": "You don’t have to do anything, configure anything, or worry about anything. You order the website, we agree on the details, and then you just wait for the link when it’s ready 😊"
     },
     "siteOffers": {
         "title": "Site Offers",

@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import { Theme } from "@mui/material";
 import { withMyTheme } from "../../theme/theme";
+import { JSX } from "react";
 
 const HeaderStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
     color: ${theme.palette.primary.main};
@@ -12,7 +13,7 @@ const HeaderStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
 `)
 
 interface MyButtonProps {
-    text: string,
+    text: string | JSX.Element,
     additionalCss?: any
 }
 
