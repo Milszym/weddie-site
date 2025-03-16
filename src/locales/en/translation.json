@@ -11,9 +11,29 @@
         "secondOfferDescription": "Tell us about the style of your wedding, optionally share some inspirations, and we will create something unique for you."
     },
     "uncleOnAWedding": {
-        "title": "Uncle on a wedding"
+        "title": "Offer",
+        "offerTitle": "Uncle on a wedding",
+        "instructionTitle": "How does it work?",
+        "instructions": {
+            "step1": "Choose one of the templates on your own or with our help:",
+            "step2": "Decide which elements of the template you want to keep and which to remove.",
+            "step3": "Think about the address you would like your website to have. You can read more about addresses below:",
+            "step4": "Contact us, tell us about the style of your wedding, and we will customize the template's color scheme for you!"
+        },
+        "firstTemplate": "Pure Joy",
+        "secondTemplate": "Dandellion",
+        "domainInstructions": "Website Addresses",
+        "contact": "Contact"
     },
     "rockingAunt": {
-        "title": "Rocking aunt"
+        "title": "Offer",
+        "offerTitle": "Rocking aunt",
+        "instructionTitle": "How does it work?"
+    },
+    "domainInstructions": {
+        "title": "Domain Instructions"
+    },
+    "contact": {
+        "title": "Contact"
     }
 }

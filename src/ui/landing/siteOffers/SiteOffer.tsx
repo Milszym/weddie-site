@@ -3,7 +3,7 @@ import { withMyTheme } from "../../theme/theme"
 import { Box, css, Theme } from "@mui/material"
 import { MyText } from "../../components/text/MyText"
 import { SiteOfferImage } from "./SiteOfferImage"
-import { isMobile } from "../../util/isMobile"
+import { isMobile, MOBILE_WIDTH } from "../../util/isMobile"
 
 interface SiteOfferProps {
     icon: any,
@@ -20,7 +20,7 @@ const OfferBoxStyle = withMyTheme((theme: Theme) => css`
     justify-content: center;
     justify-items: center;
     gap: 5vh;
-    @media (max-width: 767px) {
+    @media (max-width: ${MOBILE_WIDTH}px) {
         flex-basis: 100%;
     }
 `)
