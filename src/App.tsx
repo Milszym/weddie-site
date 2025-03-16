@@ -1,22 +1,10 @@
-import { ThemeProvider, createTheme } from '@mui/material';
 import { Title } from './ui/landing/title/Title';
-
-// Create a custom theme using MUI's theme system
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2', // blue
-    },
-    secondary: {
-      main: '#dc004e', // pink
-    },
-  },
-});
-
+import { lightTheme } from './ui/theme/theme';
+import { ThemeProvider } from '@emotion/react';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <Title />
     </ThemeProvider>
   );

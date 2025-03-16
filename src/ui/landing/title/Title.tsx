@@ -6,6 +6,6 @@ import { MyButton } from "../../components/MyButton"
 export const Title = () => {
     return <Fullscreen>
         <h1>Weddie Site</h1>
-        <MyButton />
+        <MyButton text={'Sample button'}/>
     </Fullscreen>
 }
