@@ -34,7 +34,26 @@
         "instructionTitle": "Jak to działa?"
     },
     "domainInstructions": {
-        "title": "Adresy strony"
+        "title": "Wybierz Idealny Adres",
+        "subtitle": "Dwie eleganckie opcje dla Twojej strony ślubnej",
+        "customDomain": {
+            "title": "Własna Domena",
+            "description": "Użyj własnej nazwy domeny dla w pełni spersonalizowanego doświadczenia. Znajdź nazwę domeny, która Ci się podoba, a my ją skonfigurujemy. Upewnij się, że jest dostępna w popularnych rejestrach domen lub poproś nas o pomoc w jej znalezieniu. Koszt zależy od wybranej nazwy domeny i jej dostępności.",
+            "features": {
+                "personal": "W pełni spersonalizowany URL",
+                "branding": "Idealne dla Twojej marki",
+                "flexibility": "Pełna kontrola nad domeną"
+            }
+        },
+        "subdomain": {
+            "title": "Subdomena Weddie.site",
+            "description": "Otrzymaj piękną subdomenę w stylu andrewandpatty.weddie.site całkowicie za darmo. Dostępność zależy od wybranej nazwy subdomeny - pomożemy Ci sprawdzić, czy Twoja wymarzona nazwa jest dostępna.",
+            "features": {
+                "free": "Bezpłatne",
+                "simple": "Prosta konfiguracja",
+                "reliable": "Niezawodny hosting"
+            }
+        }
     },
     "contact": {
         "title": "Kontakt",

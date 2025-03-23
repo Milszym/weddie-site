@@ -4,7 +4,7 @@
         "titlePart2": "' ",
         "titlePart3": "Site",
         "subtitle": "Websites for Marriage & Wedding",
-        "description": "You don’t have to do anything, configure anything, or worry about anything. You order the website, we agree on the details, and then you just wait for the link when it’s ready 😊"
+        "description": "You don't have to do anything, configure anything, or worry about anything. You order the website, we agree on the details, and then you just wait for the link when it's ready 😊"
     },
     "siteOffers": {
         "title": "Site Offers",
@@ -34,7 +34,26 @@
         "instructionTitle": "How does it work?"
     },
     "domainInstructions": {
-        "title": "Domain Instructions"
+        "title": "Choose Your Perfect Domain",
+        "subtitle": "Two elegant options for your wedding website",
+        "customDomain": {
+            "title": "Custom Domain",
+            "description": "Use your own domain name for a truly personalized experience. Search for a domain name that you like and we will set it up for you. Make sure it's available on any common domain registries found online or ask as to find it for you. The cost depends on the chosen domain name and its availability.",
+            "features": {
+                "personal": "Fully personalized URL",
+                "branding": "Perfect for your brand",
+                "flexibility": "Complete control over your domain"
+            }
+        },
+        "subdomain": {
+            "title": "Weddie.site Subdomain",
+            "description": "Get a beautiful subdomain like andrewandpatty.weddie.site completely free of charge. Subject to availability of your preferred subdomain name - we can help you check if your desired name is available.",
+            "features": {
+                "free": "Free of charge",
+                "simple": "Simple setup",
+                "reliable": "Reliable hosting"
+            }
+        }
     },
     "contact": {
         "title": "Contact",

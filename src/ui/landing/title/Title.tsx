@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useTranslation } from "react-i18next"
 import { Fullscreen } from "../../components/Fullscreen"
-import { MyButton } from "../../components/button/MyButton"
 import { MyHeader } from "../../components/text/MyHeader"
 import { withMyTheme } from "../../theme/theme"
 import { css } from "@emotion/react"
