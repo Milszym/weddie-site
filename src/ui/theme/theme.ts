@@ -15,6 +15,10 @@ export const lightTheme = createTheme({
             dark: '#94AE98',
             contrastText: '#fff',
         },
+        text: {
+            primary: '#000',
+            secondary: '#fff',
+        }
     },
     typography: {
         fontFamily: "'Cormorant', serif",
@@ -27,8 +31,8 @@ export const lightTheme = createTheme({
     }
 })
 
-export const withMyTheme = <T extends (arg: any) => any>(
-    styleCreator: (theme: Theme) => ReturnType<T>
+export const withMyTheme = <T extends (arg: any, additionalArg?: any) => any>(
+    styleCreator: (theme: Theme, additionalArg?: any) => ReturnType<T>
 ) => {
-    return (theme: any) => styleCreator(theme as Theme) as SerializedStyles;
+    return (theme: any, additionalArg?: any) => styleCreator(theme as Theme, additionalArg) as SerializedStyles;
 };
