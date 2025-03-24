@@ -1,291 +1,179 @@
 /** @jsxImportSource @emotion/react */
-import {useTranslation} from "react-i18next"
-import {withMyTheme} from "../../theme/theme"
-import {css} from "@emotion/react"
-import {ImageResource} from "../../resources/ImageResource"
-import {Button, Typography} from "@mui/material"
-import {Fullscreen} from "../../components/Fullscreen"
-import {isMobile, mobileCss} from "../../util/isMobile"
-import {UNCLE_ON_A_WEDDING_ID} from "../unlceOnAWedding/UncledOnAWedding"
-import {scrollToSection} from "../../util/scroll"
-import {ROCKING_AUNT_ID} from "../rockingAunt/RockingAunt"
-import {CONTACT_ID} from "../contact/Contact"
+import { useTranslation } from "react-i18next"
+import { Fullscreen } from "../../components/Fullscreen"
+import { MyHeader } from "../../components/text/MyHeader"
+import { withMyTheme } from "../../theme/theme"
+import { css, Theme } from "@mui/material"
+import { useEffect, useState } from "react"
+import { MyButton } from "../../components/button/MyButton"
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 
-const TitleContainerStyle = withMyTheme((theme) => css`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    background: linear-gradient(to left, #94AE98, #FFFFFF);
-
-    ${mobileCss(`
-        flex-direction: column;
-        justify-content: center;
-        min-height: 100vh;
-        background: linear-gradient(to top, #94AE98, #FFFFFF);
-    `)}
-`);
-
-const buttonAnimationStyle = (theme: any) => `
-    transition: all 0.3s ease;
-
-    &:hover {
-        color: ${theme.palette.primary.main};
-        background: none;
-        transform: translateY(-2px);
-    }
-    
-    &:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 50%;
-        background-color: ${theme.palette.primary.main};
-        transition: all 0.3s ease;
-    }
-    
-    &:hover:after {
-        width: 100%;
-        left: 0;
-    }
-`
-
-const CommonNavButtonStyle = (theme: any) => `
-    font-family: 'Cormorant', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: none;
-    color: ${theme.palette.primary.main};
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 1rem;
-    position: relative;
-    
-    ${buttonAnimationStyle(theme)}
-
-    ${mobileCss(`
-        margin: 0 0.5rem 0 0;
-        margin-left: 1rem;
-        font-size: 4.8vw;
-    `)}
-`
-
-const NavButtonStyle = withMyTheme((theme) => css`
-    ${CommonNavButtonStyle(theme)}
-    ${mobileCss(`
-        margin-left: 1rem;
-    `)}
-`);
-
-const NavSecondaryButtonStyle = withMyTheme((theme) => css`
-    ${CommonNavButtonStyle(theme)}
-    color: ${theme.palette.secondary.main};
-    margin-left: 3rem;
-    ${mobileCss(`
-        margin-left: 0;
-    `)}
-`);
-
-const ContactButtonStyle = withMyTheme((theme) => css`
-    font-family: 'Cormorant', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: none;
-    color: #000;
-    background: none;
-    margin-right: 2rem;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    
-    ${buttonAnimationStyle(theme)}
-
-    ${mobileCss(`
-        margin-right: 1rem;
-    `)}
-`);
-
-const NavContainer = css`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: absolute;
-    top: 2rem;
-    left: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    ${mobileCss(`
-        position: absolute;
-        top: 1rem;
-        margin-bottom: 2rem;
-    `)}
-`;
-
-const LeftNavContainer = css`
-    display: flex;
-    gap: 2rem;
-    justify-items: space-between;
-    ${mobileCss(`
-        gap: 2vw;
-        width: 100%;
-        display: flex
-        flex-direction: row;
-        justify-items: center;
-        justify-content: center;
-    `)}
-`;
-
-const ContentStyle = css`
+const TitleContainerStyle = withMyTheme((theme: Theme) => css`
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    width: 50%;
-    margin-right: 5vw;
-    margin-left: 10vw;
+    align-items: center;
+    font-family: ${theme.typography.body1.fontFamily};
+`)
 
-    ${mobileCss(`
-        width: 90%;
-        margin-left: 0;
-        align-items: center;
-        text-align: center;
-        margin-top: 5vh;
-        margin-bottom: 2rem;
-    `)}
-`;
-
-const LogoStyle = css`
-    width: 400px;
-    margin-bottom: 2.5rem;
-
-    ${mobileCss(`
-        width: 80%;
-        margin-bottom: 1.5rem;
-    `)}
-`;
-
-const LaptopImageWrapperStyle = css`
-    width: 55%;
-    min-width: 300px;
-    margin-right: 15vw;
-    margin-left: 5vw;
-    position: relative;
-
-    ${mobileCss(`
-        width: 90%;
-        margin-right: 0;
-        margin-left: 0;
-        margin-top: 2vh;
-        margin-bottom: 2rem;
-    `)}
-`;
-
-const LaptopImageStyle = css`
-    width: 100%;
-`;
-
-const LaptopImageContentWrapperStyle = css`
-    top: 5.4%;
-    left: 10%;
-    width: 80%;
-    height: 73%;
-    position: absolute;
-    overflow: scroll;
-    z-index: 2;
-`
-
-const LaptopImageContentStyle = css`
-    width: 100%;
-    object-fit: cover;
-`;
-
-const HeaderTextStyle = css`
-    font-family: 'Great Vibes', serif;
-    font-size: 2.2rem;
-    color: #000;
-    text-align: left;
+const HeaderStyle = withMyTheme((theme: Theme) => css`
+    color: ${theme.palette.primary.main};
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
+    @media (max-width: 768px) {
+        font-size: 2.2rem;
+    }
+`)
 
-    ${mobileCss(`
-        font-size: 1.8rem;
-        text-align: center;
-        margin-bottom: 1rem;
-    `)}
-`;
+const DateStyle = withMyTheme((theme: Theme) => css`
+    color: ${theme.palette.text.secondary};
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-family: ${theme.typography.body1.fontFamily};
+    @media (max-width: 768px) {
+        font-size: 1.3rem;
+    }
+`)
 
-const DescriptionStyle = withMyTheme((theme) => css`
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    color: #000;
-    text-align: left;
-    max-width: 600px;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+const CountdownContainerStyle = withMyTheme((theme: Theme) => css`
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+    color: ${theme.palette.text.secondary};
+    font-size: 1.2rem;
+    font-family: ${theme.typography.body1.fontFamily};
+    @media (max-width: 768px) {
+        gap: 1.5rem;
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }
+`)
 
-    ${mobileCss(`
-        font-size: 1.8rem;
-        text-align: center;
-        margin-bottom: 1rem;
-        padding: 0 1rem;
-    `)}
-`);
+const CountdownItemStyle = withMyTheme((theme: Theme) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        transform: translateY(-3px);
+    }
+`)
 
-const ButtonOfferIconStyle = css`
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-`;
+const CountdownNumberStyle = withMyTheme((theme: Theme) => css`
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: ${theme.palette.secondary.main};
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+    font-family: ${theme.typography.body1.fontFamily};
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
+`)
+
+const CountdownLabelStyle = withMyTheme((theme: Theme) => css`
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: ${theme.palette.text.disabled};
+    font-family: ${theme.typography.body1.fontFamily};
+`)
 
 export const Title = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    })
 
-    return <Fullscreen additionalCss={TitleContainerStyle}>
-        <div css={NavContainer}>
-            <div css={LeftNavContainer}>
-                <Button css={NavSecondaryButtonStyle} onClick={() => scrollToSection(UNCLE_ON_A_WEDDING_ID)}>
-                    <img src={ImageResource.uncleOnWedding} css={ButtonOfferIconStyle} />
-                    {t('title.button1')}
-                </Button>
-                <Button css={NavButtonStyle} onClick={() => scrollToSection(ROCKING_AUNT_ID)}>
-                    <img src={ImageResource.rockingAunt} css={ButtonOfferIconStyle} />
-                    {t('title.button2')}
-                </Button>
+    const weddingDateTime = '20250705T160000'
+    const weddingEndDateTime = '20250705T230000'
+
+    const googleCalendarStart = weddingDateTime.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/, '$1$2$3T$4$5$6')
+    const googleCalendarEnd = weddingEndDateTime.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/, '$1$2$3T$4$5$6')
+
+    const eventTitle = t('calendar.title', 'Our Wedding!')
+    const eventDescription = t('calendar.description', 'Join us to celebrate our wedding!')
+    const eventLocation = t('calendar.location', 'Venue Name, Address')
+
+    useEffect(() => {
+        const weddingDateForCountdown = new Date(weddingDateTime.substring(0, 4) + '-' + weddingDateTime.substring(4, 6) + '-' + weddingDateTime.substring(6, 8) + 'T' + weddingDateTime.substring(9, 11) + ':' + weddingDateTime.substring(11, 13) + ':' + weddingDateTime.substring(13, 15))
+
+        const calculateTimeLeft = () => {
+            const now = new Date()
+            const difference = weddingDateForCountdown.getTime() - now.getTime()
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60)
+                })
+            } else {
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+            }
+        }
+
+        calculateTimeLeft()
+        const timer = setInterval(calculateTimeLeft, 1000)
+
+        return () => clearInterval(timer)
+    }, [weddingDateTime])
+
+    const formatNumber = (num: number) => num.toString().padStart(2, '0')
+
+    const handleAddToCalendar = () => {
+        const googleCalendarUrl = new URL('https://calendar.google.com/calendar/render');
+        googleCalendarUrl.searchParams.append('action', 'TEMPLATE');
+        googleCalendarUrl.searchParams.append('text', eventTitle);
+        googleCalendarUrl.searchParams.append('dates', `${googleCalendarStart}/${googleCalendarEnd}`);
+        googleCalendarUrl.searchParams.append('details', eventDescription);
+        googleCalendarUrl.searchParams.append('location', eventLocation);
+        googleCalendarUrl.searchParams.append('sf', 'true');
+        googleCalendarUrl.searchParams.append('output', 'xml');
+
+        window.open(googleCalendarUrl.toString(), '_blank');
+    }
+
+    return (
+        <Fullscreen additionalCss={TitleContainerStyle}>
+            <MyHeader text={t('title.title')} additionalCss={HeaderStyle}/>
+            <div css={DateStyle}>{t('title.date')}</div>
+
+            <div css={CountdownContainerStyle}>
+                <div css={CountdownItemStyle}>
+                    <span css={CountdownNumberStyle}>{timeLeft.days}</span>
+                    <span css={CountdownLabelStyle}>{t('title.days')}</span>
+                </div>
+                <div css={CountdownItemStyle}>
+                    <span css={CountdownNumberStyle}>{formatNumber(timeLeft.hours)}</span>
+                    <span css={CountdownLabelStyle}>{t('title.hours')}</span>
+                </div>
+                <div css={CountdownItemStyle}>
+                    <span css={CountdownNumberStyle}>{formatNumber(timeLeft.minutes)}</span>
+                    <span css={CountdownLabelStyle}>{t('title.minutes')}</span>
+                </div>
+                <div css={CountdownItemStyle}>
+                    <span css={CountdownNumberStyle}>{formatNumber(timeLeft.seconds)}</span>
+                    <span css={CountdownLabelStyle}>{t('title.seconds')}</span>
+                </div>
             </div>
-            {!isMobile() && <Button css={ContactButtonStyle} onClick={() => scrollToSection(CONTACT_ID)}>
-                {t('title.contact')}
-            </Button>}
-        </div>
 
-        <div css={ContentStyle}>
-            <img src={ImageResource.logo} alt="Weddie Site Logo" css={LogoStyle} />
-            <Typography css={HeaderTextStyle}>{t('title.headerText')}</Typography>
-            <Typography css={DescriptionStyle}>{t('title.descriptionLine1')}</Typography>
-            <Typography css={DescriptionStyle}>
-                {t('title.descriptionLine2')}
-            </Typography>
-        </div>
-
-        <div css={LaptopImageWrapperStyle}>
-            <div css={LaptopImageContentWrapperStyle}>
-                <img src={ImageResource.laptopContent} css={LaptopImageContentStyle} alt="Laptop Content" />
-            </div>
-            <img src={ImageResource.laptop} alt="Laptop with Map" css={LaptopImageStyle} />
-        </div>
-    </Fullscreen>
-};
+            <MyButton
+                variant="outlined"
+                colorVariant="primary"
+                startIcon={<CalendarMonthIcon />}
+                onClick={handleAddToCalendar}
+                text={t('title.addToCalendar')}
+            />
+        </Fullscreen>
+    )
+}

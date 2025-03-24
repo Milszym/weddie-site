@@ -1,84 +1,88 @@
 {
-    "common": {
-        "price": "Cena"
-    },
     "title": {
-        "titlePart1": "Weddie",
-        "titlePart2": "' ",
-        "titlePart3": "Site",
-        "subtitle": "Strona na ślub i wesele",
-        "description": "Nie musicie nic robić, konfigurować, ani martwić się o niczym. Zamawiacie stronę, uzgadniamy szczegóły i tylko czekacie, aż wyślemy Wam link, gdy będzie gotowa 😊",
-        "button1": "Wujek Na Weselu",
-        "button2": "Przebojowa Ciotka",
-        "contact": "Kontakt",
-        "headerText": "Strony na ślub i wesele",
-        "descriptionLine1": "Nie musicie nic robić, nic konfigurować!",
-        "descriptionLine2": "Zamawiacie stronę, uzgadniamy szczegóły i tylko czekacie, aż wyślemy Wam link, gdy będzie gotowa 😊"
+        "title": "John & Sarah",
+        "date": "5 Lipca 2025",
+        "days": "Dni",
+        "hours": "Godzin",
+        "minutes": "Minut",
+        "seconds": "Sekund",
+        "addToCalendar": "Dodaj do kalendarza"
     },
-    "siteOffers": {
-        "title": "Pakiety",
-        "firstOffer": "Wujek na weselu",
-        "firstOfferDescription": "Tak jak wujek na weselu nie potrzebuje wiele, tak ten pakiet pokrywa podstawowe potrzeby jakie mogą być dodane do Waszej strony internetowej!",
-        "secondOffer": "Przebojowa Ciotka",
-        "secondOfferDescription": "Opowiedzcie nam o stylu Waszego wesela, opcjonalnie pokażcie inspiracje, a my stworzymy dla Was coś unikatowego."
+    "location": {
+        "title": "Lokalizacja",
+        "venueName": "Eleganckie Ogrody",
+        "address": "ul. Ślubna 123, Warszawa, Polska",
+        "description": "Nasz ślub odbędzie się w pięknych ogrodach Eleganckich Ogrodów. Miejsce oferuje wspaniałe przestrzenie na świeżym powietrzu idealne na ceremonię i przyjęcie, a także eleganckie wnętrza do ucztowania i świętowania.",
+        "mapLink": "https://www.google.com/maps?q=52.2297,21.0122",
+        "openInMaps": "Otwórz w Google Maps"
     },
-    "uncleOnAWedding": {
-        "title": "Pakiet",
-        "offerTitle": "Wujek na weselu",
-        "instructionTitle": "Jak to działa?",
-        "instructions": {
-            "step1": "Wybierzcie sami lub z naszą pomocą jeden z szablonów:",
-            "step2": "Zdecydujcie, które elementy szablonu chcecie zostawić, a które usunąć.",
-            "step3": "Przemyślcie pod jakim adresem chcielibyście mieć stronę. Więcej o adresach przeczytacie poniżej:",
-            "step4": "Skontaktujcie się z nami, opowiedzcie o stylu Waszego wesela, a my przerobimy kolorystykę szablonu pod Was!"
+    "qa": {
+        "title": "Pytania i Odpowiedzi",
+        "ceremony": {
+            "title": "Ceremonia",
+            "q1": "O której godzinie rozpocznie się ceremonia?",
+            "a1": "Ceremonia rozpocznie się o godzinie 16:00.",
+            "q2": "Co powinienem/powinnam założyć?",
+            "a2": "Prosimy o strój formalny. Dla panów - garnitur lub smoking. Dla pań - sukienki koktajlowe lub wieczorowe.",
+            "q3": "Czy jest dostępny parking?",
+            "a3": "Tak, dla wszystkich gości dostępny jest bezpłatny parking na miejscu."
         },
-        "firstTemplate": "Pure Joy",
-        "secondTemplate": "Dandellion",
-        "domainInstructions": "Adresy stron",
-        "contact": "Kontakt"
-    },
-    "rockingAunt": {
-        "title": "Pakiet",
-        "offerTitle": "Przebojowa Ciotka",
-        "instructionTitle": "Jak to działa?",
-        "instructions": {
-            "step1": "Spotykacie się z nami online i opowiadacie o swojej wizji wymarzonej strony 🤩 Możecie przygotować swoje inspiracje.",
-            "step2": "Wspólnie ustalamy zakres strony, a następnie my przygotowujemy dla Was poglądowy projekt z wyceną i estymacją.",
-            "step3": "Spotykamy się w celu akceptacji projektu, wprowadzamy ewentualne poprawki i rozpoczynamy pracę nad projektem.",
-            "step4": "Przemyślcie pod jakim adresem chcielibyście mieć stronę. Więcej o adresach przeczytacie poniżej:"
+        "wedding": {
+            "title": "Przyjęcie Weselne",
+            "q1": "O której godzinie rozpocznie się przyjęcie?",
+            "a1": "Przyjęcie rozpocznie się zaraz po ceremonii, około 17:30.",
+            "q2": "Czy będzie posiłek?",
+            "a2": "Tak, serwowany będzie trzydaniowy obiad z opcją wegetariańską.",
+            "q3": "Czy jest lista prezentów?",
+            "a3": "Tak, informacje o liście prezentów znajdą Państwo na stronie RSVP."
         },
-        "domainInstructions": "Adresy stron"
-    },
-    "domainInstructions": {
-        "title": "Wybierz Idealny Adres",
-        "subtitle": "Dwie eleganckie opcje dla Twojej strony ślubnej",
-        "customDomain": {
-            "title": "Własna Domena",
-            "description": "Użyj własnej nazwy domeny dla w pełni spersonalizowanego doświadczenia. Znajdź nazwę domeny, która Ci się podoba, a my ją skonfigurujemy. Upewnij się, że jest dostępna w popularnych rejestrach domen lub poproś nas o pomoc w jej znalezieniu. Koszt zależy od wybranej nazwy domeny i jej dostępności.",
-            "features": {
-                "personal": "W pełni spersonalizowany URL",
-                "branding": "Idealne dla Twojej marki",
-                "flexibility": "Pełna kontrola nad domeną"
-            }
-        },
-        "subdomain": {
-            "title": "Subdomena Weddie.site",
-            "description": "Otrzymaj piękną subdomenę w stylu andrewandpatty.weddie.site całkowicie za darmo. Dostępność zależy od wybranej nazwy subdomeny - pomożemy Ci sprawdzić, czy Twoja wymarzona nazwa jest dostępna.",
-            "features": {
-                "free": "Bezpłatne",
-                "simple": "Prosta konfiguracja",
-                "reliable": "Niezawodny hosting"
-            }
+        "accommodation": {
+            "title": "Nocleg",
+            "q1": "Czy są w pobliżu hotele?",
+            "a1": "Tak, zarezerwowaliśmy specjalne stawki w kilku pobliskich hotelach. Szczegóły zostaną podane w zaproszeniu.",
+            "q2": "Czy jest zapewniony transport?",
+            "a2": "Tak, dostępny będzie transport wahadłowy między hotelami a miejscem wydarzenia.",
+            "q3": "O której godzinie jest zameldowanie?",
+            "a3": "Standardowa godzina zameldowania to 15:00 we wszystkich hotelach partnerskich."
         }
     },
-    "contact": {
-        "title": "Kontakt",
-        "description": "Zadzwoń do nas lub skontaktuj się z nami na Instagramie, WhatsAppie, Messengerze lub po prostu skorzystaj z formularza i rozpocznijmy tworzenie Waszej strony internetowej.",
-        "contactLabel": "Kontakt",
-        "contactPlaceholder": "Email lub numer telefonu",
-        "messageLabel": "Wiadomość",
-        "messagePlaceholder": "Napiszcie o wybranym pakiecie. Opowiedzcie o stylu Waszego ślubu i wesela lub po prostu napiszcie do nas  żeby umówić z nami spotkanie 😊",
-        "send": "Wyślij wiadomość",
-        "phoneNumber": "+48 665 123 549"
+    "witnesses": {
+        "title": "Nasi Świadkowie",
+        "witness1": {
+            "name": "Michael Johnson",
+            "phone": "+48 123 456 789",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        },
+        "witness2": {
+            "name": "Emma Wilson",
+            "phone": "+48 987 654 321",
+            "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        }
+    },
+    "gallery": {
+        "title": "Galeria Zdjęć",
+        "description": "Stworzyliśmy specjalną galerię zdjęć, gdzie możesz oglądać i dzielić się swoimi ulubionymi momentami z naszego ślubu. Galeria będzie dostępna podczas i po wydarzeniu, pozwalając Ci uchwycić i podzielić się swoimi wspomnieniami z nami.",
+        "previewImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "link": "https://example.com/wedding-gallery",
+        "buttonText": "Zobacz Galerię"
+    },
+    "rsvp": {
+        "title": "Potwierdzenie Obecności",
+        "namePlaceholder": "Twoje Imię",
+        "messagePlaceholder": "Twoja Wiadomość",
+        "contactPlaceholder": "Twoje Dane Kontaktowe",
+        "submitButton": "Wyślij Potwierdzenie",
+        "bride": "Panna Młoda",
+        "groom": "Pan Młody",
+        "bridePhone": "+48 123 456 789",
+        "groomPhone": "+48 987 654 321"
+    },
+    "footer": {
+        "email": "Email",
+        "emailAddress": "kontakt@example.com",
+        "phone": "Telefon",
+        "phoneNumber": "+48 123 456 789",
+        "credits": "© 2025 Strona Weselna <1>Weddie.Site</1>. Wszelkie prawa zastrzeżone.",
+        "freepikCredits": "Ikony i ilustracje zaprojektowane przez <1>Freepik.com</1>"
     }
 }

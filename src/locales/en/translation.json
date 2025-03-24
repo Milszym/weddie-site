@@ -1,84 +1,96 @@
 {
-    "common": {
-        "price": "Price"
-    },
     "title": {
-        "titlePart1": "Weddie ",
-        "titlePart2": "' ",
-        "titlePart3": "Site",
-        "subtitle": "Websites for Marriage & Wedding",
-        "description": "You don't have to do anything, configure anything, or worry about anything. You order the website, we agree on the details, and then you just wait for the link when it's ready 😊",
-        "button1": "Uncle on a wedding",
-        "button2": "Rocking Aunt",
-        "contact": "Contact",
-        "headerText": "Wedding & Marriage Websites",
-        "descriptionLine1": "You don't have to do or configure anything!",
-        "descriptionLine2": "You order the website, we agree on the details, and you just wait until we send you the link when it's ready 😊"
+        "title": "John & Sarah",
+        "date": "July 5th, 2025",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds",
+        "addToCalendar": "Add to Calendar"
     },
-    "siteOffers": {
-        "title": "Site Offers",
-        "firstOffer": "Uncle on a wedding",
-        "firstOfferDescription": "Just like the uncle at the wedding doesn't need much, this package covers the basic needs that can be added to your website!",
-        "secondOffer": "Rocking Aunt",
-        "secondOfferDescription": "Tell us about the style of your wedding, optionally share some inspirations, and we will create something unique for you."
+    "location": {
+        "title": "Location",
+        "venueName": "Elegant Gardens",
+        "address": "123 Wedding Lane, Warsaw, Poland",
+        "description": "Our wedding will take place in the beautiful gardens of Elegant Gardens. The venue features stunning outdoor spaces perfect for both ceremony and reception, with elegant indoor areas for dining and celebration.",
+        "mapLink": "https://www.google.com/maps?q=52.2297,21.0122",
+        "openInMaps": "Open in Google Maps"
     },
-    "uncleOnAWedding": {
-        "title": "Offer",
-        "offerTitle": "Uncle on a wedding",
-        "instructionTitle": "How does it work?",
-        "instructions": {
-            "step1": "Choose one of the templates on your own or with our help:",
-            "step2": "Decide which elements of the template you want to keep and which to remove.",
-            "step3": "Think about the address you would like your website to have. You can read more about addresses below:",
-            "step4": "Contact us, tell us about the style of your wedding, and we will customize the template's color scheme for you!"
+    "qa": {
+        "title": "Questions & Answers",
+        "ceremony": {
+            "title": "Ceremony",
+            "q1": "What time is the ceremony?",
+            "a1": "The ceremony will begin at 4:00 PM.",
+            "q2": "What should I wear?",
+            "a2": "Formal attire is requested. For gentlemen, a suit or tuxedo. For ladies, cocktail dresses or formal gowns.",
+            "q3": "Is there parking available?",
+            "a3": "Yes, there is complimentary parking available on-site for all guests."
         },
-        "firstTemplate": "Pure Joy",
-        "secondTemplate": "Dandellion",
-        "domainInstructions": "Website Addresses",
-        "contact": "Contact"
-    },
-    "rockingAunt": {
-        "title": "Offer",
-        "offerTitle": "Rocking aunt",
-        "instructionTitle": "How does it work?",
-        "instructions": {
-            "step1": "Meet with us online and tell us about your vision for your dream website 🤩 You can prepare your inspirations in advance.",
-            "step2": "Together we determine the scope of the website, and then we prepare a conceptual design with pricing and estimation for you.",
-            "step3": "We meet to approve the design, make any necessary adjustments, and then begin work on the project.",
-            "step4": "Think about what address you would like for your website. You can read more about addresses below:"
+        "wedding": {
+            "title": "Wedding Reception",
+            "q1": "What time is the reception?",
+            "a1": "The reception will begin immediately after the ceremony, around 5:30 PM.",
+            "q2": "Will there be a meal?",
+            "a2": "Yes, we will be serving a three-course dinner with vegetarian options available.",
+            "q3": "Is there a gift registry?",
+            "a3": "Yes, you can find our gift registry information on the RSVP page."
         },
-        "domainInstructions": "Website Addresses"
-    },
-    "domainInstructions": {
-        "title": "Choose Your Perfect Domain",
-        "subtitle": "Two elegant options for your wedding website",
-        "customDomain": {
-            "title": "Custom Domain",
-            "description": "Use your own domain name for a truly personalized experience. Search for a domain name that you like and we will set it up for you. Make sure it's available on any common domain registries found online or ask as to find it for you. The cost depends on the chosen domain name and its availability.",
-            "features": {
-                "personal": "Fully personalized URL",
-                "branding": "Perfect for your brand",
-                "flexibility": "Complete control over your domain"
-            }
-        },
-        "subdomain": {
-            "title": "Weddie.site Subdomain",
-            "description": "Get a beautiful subdomain like andrewandpatty.weddie.site completely free of charge. Subject to availability of your preferred subdomain name - we can help you check if your desired name is available.",
-            "features": {
-                "free": "Free of charge",
-                "simple": "Simple setup",
-                "reliable": "Reliable hosting"
-            }
+        "accommodation": {
+            "title": "Accommodation",
+            "q1": "Are there hotels nearby?",
+            "a1": "Yes, we have arranged special rates at several nearby hotels. Details will be provided in your invitation.",
+            "q2": "Is there transportation provided?",
+            "a2": "Yes, shuttle service will be available between the hotels and venue.",
+            "q3": "What time is check-in?",
+            "a3": "Standard check-in time is 3:00 PM at all partner hotels."
         }
     },
-    "contact": {
-        "title": "Contact",
-        "description": "Call us or contact us on Instagram, WhatsApp, Messenger, or simply use the form and let's start creating your website.",
-        "contactLabel": "Contact",
-        "contactPlaceholder": "Email or phone number",
-        "messageLabel": "Message",
-        "messagePlaceholder": "Write about your chosen offer. Tell us about your wedding or simply write a message to setup a meeting with us 😊",
-        "send": "Send message",
-        "phoneNumber": "+48 665 123 549"
+    "witnesses": {
+        "title": "Our Witnesses",
+        "witness1": {
+            "name": "Michael Johnson",
+            "phone": "+48 123 456 789",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        },
+        "witness2": {
+            "name": "Emma Wilson",
+            "phone": "+48 987 654 321",
+            "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        }
+    },
+    "gallery": {
+        "title": "Photo Gallery",
+        "description": "We've created a special photo gallery where you can view and share your favorite moments from our wedding. The gallery will be available during and after the event, allowing you to capture and share your memories with us.",
+        "previewImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "link": "https://example.com/wedding-gallery",
+        "buttonText": "View Gallery"
+    },
+    "rsvp": {
+        "title": "RSVP",
+        "namePlaceholder": "Your Name",
+        "messagePlaceholder": "Your Message",
+        "contactPlaceholder": "Your Contact Information",
+        "submitButton": "Send RSVP",
+        "bride": "Bride",
+        "groom": "Groom",
+        "bridePhone": "+48 123 456 789",
+        "groomPhone": "+48 987 654 321"
+    },
+    "tables": {
+        "title": "Table Assignment",
+        "description": "Enter your name to find your assigned table for the reception. We've carefully arranged the seating to ensure everyone has a great time!",
+        "tableImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "namePlaceholder": "Enter your name",
+        "searchButton": "Find My Table",
+        "notFound": "Table not found. Please check your name or contact the organizers."
+    },
+    "footer": {
+        "email": "Email",
+        "emailAddress": "contact@example.com",
+        "phone": "Phone",
+        "phoneNumber": "+48 123 456 789",
+        "credits": "© 2025 Wedding Website <1>Weddie.Site</1>. All rights reserved.",
+        "freepikCredits": "Icons and illustrations designed by <1>Freepik.com</1>"
     }
 }
