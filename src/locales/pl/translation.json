@@ -1,6 +1,86 @@
 {
     "title": {
-        "title": "Weddie' Site",
-        "button": "Sample button"
+        "title": "John & Sarah",
+        "date": "5 Lipca 2025",
+        "days": "Dni",
+        "hours": "Godzin",
+        "minutes": "Minut",
+        "seconds": "Sekund"
+    },
+    "location": {
+        "title": "Lokalizacja",
+        "venueName": "Eleganckie Ogrody",
+        "address": "ul. Ślubna 123, Warszawa, Polska",
+        "description": "Nasz ślub odbędzie się w pięknych ogrodach Eleganckich Ogrodów. Miejsce oferuje wspaniałe przestrzenie na świeżym powietrzu idealne na ceremonię i przyjęcie, a także eleganckie wnętrza do ucztowania i świętowania.",
+        "mapLink": "https://www.google.com/maps?q=52.2297,21.0122",
+        "openInMaps": "Otwórz w Google Maps"
+    },
+    "qa": {
+        "title": "Pytania i Odpowiedzi",
+        "ceremony": {
+            "title": "Ceremonia",
+            "q1": "O której godzinie rozpocznie się ceremonia?",
+            "a1": "Ceremonia rozpocznie się o godzinie 16:00.",
+            "q2": "Co powinienem/powinnam założyć?",
+            "a2": "Prosimy o strój formalny. Dla panów - garnitur lub smoking. Dla pań - sukienki koktajlowe lub wieczorowe.",
+            "q3": "Czy jest dostępny parking?",
+            "a3": "Tak, dla wszystkich gości dostępny jest bezpłatny parking na miejscu."
+        },
+        "wedding": {
+            "title": "Przyjęcie Weselne",
+            "q1": "O której godzinie rozpocznie się przyjęcie?",
+            "a1": "Przyjęcie rozpocznie się zaraz po ceremonii, około 17:30.",
+            "q2": "Czy będzie posiłek?",
+            "a2": "Tak, serwowany będzie trzydaniowy obiad z opcją wegetariańską.",
+            "q3": "Czy jest lista prezentów?",
+            "a3": "Tak, informacje o liście prezentów znajdą Państwo na stronie RSVP."
+        },
+        "accommodation": {
+            "title": "Nocleg",
+            "q1": "Czy są w pobliżu hotele?",
+            "a1": "Tak, zarezerwowaliśmy specjalne stawki w kilku pobliskich hotelach. Szczegóły zostaną podane w zaproszeniu.",
+            "q2": "Czy jest zapewniony transport?",
+            "a2": "Tak, dostępny będzie transport wahadłowy między hotelami a miejscem wydarzenia.",
+            "q3": "O której godzinie jest zameldowanie?",
+            "a3": "Standardowa godzina zameldowania to 15:00 we wszystkich hotelach partnerskich."
+        }
+    },
+    "witnesses": {
+        "title": "Nasi Świadkowie",
+        "witness1": {
+            "name": "Michael Johnson",
+            "phone": "+48 123 456 789",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        },
+        "witness2": {
+            "name": "Emma Wilson",
+            "phone": "+48 987 654 321",
+            "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        }
+    },
+    "gallery": {
+        "title": "Galeria Zdjęć",
+        "description": "Stworzyliśmy specjalną galerię zdjęć, gdzie możesz oglądać i dzielić się swoimi ulubionymi momentami z naszego ślubu. Galeria będzie dostępna podczas i po wydarzeniu, pozwalając Ci uchwycić i podzielić się swoimi wspomnieniami z nami.",
+        "previewImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "link": "https://example.com/wedding-gallery",
+        "buttonText": "Zobacz Galerię"
+    },
+    "rsvp": {
+        "title": "Potwierdzenie Obecności",
+        "namePlaceholder": "Twoje Imię",
+        "messagePlaceholder": "Twoja Wiadomość",
+        "contactPlaceholder": "Twoje Dane Kontaktowe",
+        "submitButton": "Wyślij Potwierdzenie",
+        "bride": "Panna Młoda",
+        "groom": "Pan Młody",
+        "bridePhone": "+48 123 456 789",
+        "groomPhone": "+48 987 654 321"
+    },
+    "footer": {
+        "email": "Email",
+        "emailAddress": "kontakt@example.com",
+        "phone": "Telefon",
+        "phoneNumber": "+48 123 456 789",
+        "credits": "© 2024 Strona Weselna. Wszelkie prawa zastrzeżone."
     }
 }
