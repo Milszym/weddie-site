@@ -6,13 +6,13 @@ import { withMyTheme } from '../theme/theme';
 import { Theme } from '@mui/material';
 
 const FullscreenStyle = withMyTheme((theme: Theme, additionalCss: any) => css`
-    width: 100vw; 
+    max-height: 100vh;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    overflow: hidden; 
     ${additionalCss ? additionalCss(theme) : ''}
 `)
 

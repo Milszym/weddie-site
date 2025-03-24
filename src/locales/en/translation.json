@@ -1,6 +1,96 @@
 {
     "title": {
-        "title": "Weddie' Site",
-        "button": "Sample button"
+        "title": "John & Sarah",
+        "date": "July 5th, 2025",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds",
+        "addToCalendar": "Add to Calendar"
+    },
+    "location": {
+        "title": "Location",
+        "venueName": "Elegant Gardens",
+        "address": "123 Wedding Lane, Warsaw, Poland",
+        "description": "Our wedding will take place in the beautiful gardens of Elegant Gardens. The venue features stunning outdoor spaces perfect for both ceremony and reception, with elegant indoor areas for dining and celebration.",
+        "mapLink": "https://www.google.com/maps?q=52.2297,21.0122",
+        "openInMaps": "Open in Google Maps"
+    },
+    "qa": {
+        "title": "Questions & Answers",
+        "ceremony": {
+            "title": "Ceremony",
+            "q1": "What time is the ceremony?",
+            "a1": "The ceremony will begin at 4:00 PM.",
+            "q2": "What should I wear?",
+            "a2": "Formal attire is requested. For gentlemen, a suit or tuxedo. For ladies, cocktail dresses or formal gowns.",
+            "q3": "Is there parking available?",
+            "a3": "Yes, there is complimentary parking available on-site for all guests."
+        },
+        "wedding": {
+            "title": "Wedding Reception",
+            "q1": "What time is the reception?",
+            "a1": "The reception will begin immediately after the ceremony, around 5:30 PM.",
+            "q2": "Will there be a meal?",
+            "a2": "Yes, we will be serving a three-course dinner with vegetarian options available.",
+            "q3": "Is there a gift registry?",
+            "a3": "Yes, you can find our gift registry information on the RSVP page."
+        },
+        "accommodation": {
+            "title": "Accommodation",
+            "q1": "Are there hotels nearby?",
+            "a1": "Yes, we have arranged special rates at several nearby hotels. Details will be provided in your invitation.",
+            "q2": "Is there transportation provided?",
+            "a2": "Yes, shuttle service will be available between the hotels and venue.",
+            "q3": "What time is check-in?",
+            "a3": "Standard check-in time is 3:00 PM at all partner hotels."
+        }
+    },
+    "witnesses": {
+        "title": "Our Witnesses",
+        "witness1": {
+            "name": "Michael Johnson",
+            "phone": "+48 123 456 789",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        },
+        "witness2": {
+            "name": "Emma Wilson",
+            "phone": "+48 987 654 321",
+            "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        }
+    },
+    "gallery": {
+        "title": "Photo Gallery",
+        "description": "We've created a special photo gallery where you can view and share your favorite moments from our wedding. The gallery will be available during and after the event, allowing you to capture and share your memories with us.",
+        "previewImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "link": "https://example.com/wedding-gallery",
+        "buttonText": "View Gallery"
+    },
+    "rsvp": {
+        "title": "RSVP",
+        "namePlaceholder": "Your Name",
+        "messagePlaceholder": "Your Message",
+        "contactPlaceholder": "Your Contact Information",
+        "submitButton": "Send RSVP",
+        "bride": "Bride",
+        "groom": "Groom",
+        "bridePhone": "+48 123 456 789",
+        "groomPhone": "+48 987 654 321"
+    },
+    "tables": {
+        "title": "Table Assignment",
+        "description": "Enter your name to find your assigned table for the reception. We've carefully arranged the seating to ensure everyone has a great time!",
+        "tableImage": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "namePlaceholder": "Enter your name",
+        "searchButton": "Find My Table",
+        "notFound": "Table not found. Please check your name or contact the organizers."
+    },
+    "footer": {
+        "email": "Email",
+        "emailAddress": "contact@example.com",
+        "phone": "Phone",
+        "phoneNumber": "+48 123 456 789",
+        "credits": "© 2025 Wedding Website <1>Weddie.Site</1>. All rights reserved.",
+        "freepikCredits": "Icons and illustrations designed by <1>Freepik.com</1>"
     }
 }

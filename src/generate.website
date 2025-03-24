@@ -1,0 +1,21 @@
+Design a wedding site with these requirements:
+
+1. use React and Typescript
+2. Use reusable components from src/ui/components or create new ones if any of new components seem to be generic reusable ones
+3. use withMyTheme method to style css for components 
+4. Use existing theme from src/ui/theme/theme.ts - use typography and colors prepared there the same way it's used in 
+5. use i18next translation for each text on the page and add PL and EN translations. Location of translation files are in src/locales/*
+6. make sure each fullwidth, fullheight component (let's call it screen) has a separate folder in src/ui/landing folder
+7. As a sample screen see src/ui/ladning/title/Title.tsx file 
+8. make sure site is elegant and boho, simple and haughty with advantage of white colors. Use popular UI used on modern websites, including some delicate screen-entering animations
+7. use some sample images from the internet
+9. UI should be prepared for mobile and tablet devices too so that every component is properly visible and proportion of each "screen" is also fullwidth full height
+10. the list of the screens are:
+* title - centered title with a date and counter until wedding date e.g. 05.07.2025
+* location - title, location name and address with a description, an image, a small Google Map component and button to redirect to the map
+* questions and answers - title, 3 sections: ceremony, wedding and accomodation. Each section should be designed to accept from 3 to 6 items. Feel free to invent way of showing it. It can be e.g. swipeable view pager on mobile and cards on desktop
+* witnesses - title, two components consisting of witness image, name and phone number contact
+* remote gallery - title, description explaining the gallery link and button to redirect to some link
+* rsvp - title, form having name, message and contact inputs and send button. Additionally two phone numbers to call the bride or the groom
+* tables setup - title, description, table icon/image and a name input and check button that will allow to search for your table at wedding. As a result of the button click a table name should appear.
+11. Additionally below all of the screens there should be a black background footer with "Designed by X" section and some basic contact information

@@ -18,7 +18,7 @@ export const lightTheme = createTheme({
         text: {
             primary: '#000',
             secondary: '#fff',
-        }
+        },
     },
     typography: {
         fontFamily: "'Cormorant', serif",
