@@ -3,7 +3,6 @@ import { css, useTheme } from "@emotion/react";
 import { Button, Theme, ButtonProps as MuiButtonProps } from "@mui/material";
 import { withMyTheme } from "../../theme/theme";
 
-// Enhanced ButtonPrimaryStyle that works well with outlined variant
 const ButtonPrimaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
     font-size: 16px;
     padding: 10px 20px;
@@ -29,7 +28,6 @@ const ButtonPrimaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => cs
     ${additionalCss ? additionalCss(theme) : ''}
 `)
 
-// Enhanced ButtonSecondaryStyle that works well with outlined variant
 const ButtonSecondaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
     font-size: 16px;
     padding: 10px 20px;
