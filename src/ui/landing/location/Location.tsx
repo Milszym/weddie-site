@@ -4,11 +4,21 @@ import { Fullscreen } from "../../components/Fullscreen"
 import { MyHeader } from "../../components/text/MyHeader"
 import { withMyTheme } from "../../theme/theme"
 import { css, Theme } from "@mui/material"
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
+import { GoogleMap, LoadScript, useJsApiLoader } from '@react-google-maps/api'
 import { getHexWithOpacity } from "../../theme/getHexWithOpacity"
+import { useEffect, useState } from "react"
 
 const BoxStyle = withMyTheme((theme: Theme) => css`
+    color: ${theme.palette.text.primary};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    min-height: 100%;
+    width: 100%;
     background: ${getHexWithOpacity(theme.palette.primary.main, 0.05)};
+    font-family: ${theme.typography.body1.fontFamily};
 `)
 
 const HeaderStyle = withMyTheme((theme: Theme) => css`
@@ -96,11 +106,6 @@ const mapContainerStyle = {
     height: '100%'
 };
 
-const center = {
-    lat: 52.2297, // Warsaw coordinates as an example
-    lng: 21.0122
-};
-
 const MapUnavailableStyle = withMyTheme((theme: Theme) => css`
     display: flex;
     align-items: center;
@@ -115,9 +120,67 @@ const MapUnavailableStyle = withMyTheme((theme: Theme) => css`
     border-radius: 8px;
 `)
 
+// The libraries we need to load
+const libraries = ['marker'];
+
 export const Location = () => {
     const { t } = useTranslation()
-    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    const [map, setMap] = useState(null);
+    // Access environment variable
+    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || '';
+
+    const { isLoaded, loadError } = useJsApiLoader({
+        googleMapsApiKey,
+        // Specify marker library to access AdvancedMarkerElement
+        libraries: libraries as any
+    });
+
+    useEffect(() => {
+        // Debug: Log API key info and loading status
+        if (!googleMapsApiKey) {
+            console.error('Google Maps API key is not set. Please add REACT_APP_GOOGLE_MAPS_API_KEY to your .env file.');
+        } else {
+            console.log('Google Maps API key is configured with length:', googleMapsApiKey.length);
+            console.log('First few characters:', googleMapsApiKey.substring(0, 3) + '...');
+        }
+
+        if (loadError) {
+            console.error('Google Maps loading error:', loadError);
+        }
+
+        // Debug Google Maps API loading status
+        console.log('Google Maps API loading status:', { 
+            isLoaded,
+            hasLoadError: !!loadError,
+            hasWindow: typeof window !== 'undefined',
+            hasGoogleObject: typeof window !== 'undefined' && !!window.google,
+            hasGoogleMaps: typeof window !== 'undefined' && !!window.google?.maps,
+            hasMarkerLibrary: typeof window !== 'undefined' && !!window.google?.maps?.marker
+        });
+    }, [googleMapsApiKey, loadError, isLoaded]);
+
+    // Function to add an AdvancedMarker once the map is loaded
+    const onMapLoad = (map: any) => {
+        setMap(map);
+
+        if (window.google && window.google.maps && window.google.maps.marker) {
+            // Create advanced marker
+            const { AdvancedMarkerElement } = window.google.maps.marker;
+            
+            // Create the marker position
+            const position = { 
+                lat: locationDetails.lat, 
+                lng: locationDetails.lng 
+            };
+            
+            // Create a new advanced marker
+            new AdvancedMarkerElement({
+                map,
+                position,
+                title: locationDetails.venueName,
+            });
+        }
+    };
 
     const locationDetails = {
         lat: 52.2297,
@@ -128,34 +191,8 @@ export const Location = () => {
         mapLink: t('location.mapLink')
     };
 
-    if (!googleMapsApiKey) {
-        console.error('Google Maps API key is not set. Please add REACT_APP_GOOGLE_MAPS_API_KEY to your .env file.');
-        return (
-            <Fullscreen>
-                <MyHeader text={t('location.title')} additionalCss={HeaderStyle} />
-                <div css={ContentStyle}>
-                    <div css={TextContentStyle}>
-                        <h2 css={SubHeaderStyle}>{locationDetails.venueName}</h2>
-                        <div css={AddressStyle}>{locationDetails.address}</div>
-                        <div css={DescriptionStyle}>{locationDetails.description}</div>
-                        <a
-                            href={locationDetails.mapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            css={HrefStyle}
-                        >
-                            {t('location.openInMaps')}
-                        </a>
-                    </div>
-                    <div css={MapContainerStyle}>
-                        <div css={MapUnavailableStyle}>
-                            {t('location.mapUnavailable', 'Map is currently unavailable. Please check back later.')}
-                        </div>
-                    </div>
-                </div>
-            </Fullscreen>
-        );
-    }
+    // Determine if we can show the map
+    const showMap = isLoaded && !loadError;
 
     return (
         <Fullscreen additionalCss={BoxStyle}>
@@ -175,15 +212,26 @@ export const Location = () => {
                     </a>
                 </div>
                 <div css={MapContainerStyle}>
-                    <LoadScript googleMapsApiKey={googleMapsApiKey}>
+                    {showMap ? (
                         <GoogleMap
                             mapContainerStyle={mapContainerStyle}
                             center={{ lat: locationDetails.lat, lng: locationDetails.lng }}
                             zoom={15}
-                        >
-                            <Marker position={{ lat: locationDetails.lat, lng: locationDetails.lng }} />
-                        </GoogleMap>
-                    </LoadScript>
+                            onLoad={onMapLoad}
+                            options={{
+                                disableDefaultUI: false,
+                                zoomControl: true,
+                                fullscreenControl: true,
+                                streetViewControl: true,
+                            }}
+                        />
+                    ) : (
+                        <div css={MapUnavailableStyle}>
+                            {loadError 
+                                ? `Error loading Google Maps: ${loadError.message}` 
+                                : t('location.mapUnavailable', 'Map is currently unavailable. Please check back later.')}
+                        </div>
+                    )}
                 </div>
             </div>
         </Fullscreen>
