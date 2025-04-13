@@ -5,6 +5,7 @@ import { MyHeader } from "../../components/text/MyHeader"
 import { withMyTheme } from "../../theme/theme"
 import { css, Theme } from "@mui/material"
 import { getHexWithOpacity } from "../../theme/getHexWithOpacity"
+import { mobileCss } from "ui/theme/isMobile"
 
 const BoxStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.text.primary};
@@ -24,9 +25,9 @@ const HeaderStyle = withMyTheme((theme: Theme) => css`
     font-size: 3rem;
     margin-bottom: 2rem;
     text-align: center;
-    @media (max-width: 768px) {
-        font-size: 2rem;
-    }
+    ${mobileCss(`
+        margin-bottom: 4rem;    
+    `)}
 `)
 
 const ContainerStyle = withMyTheme((theme: Theme) => css`
@@ -39,11 +40,13 @@ const ContainerStyle = withMyTheme((theme: Theme) => css`
     align-items: flex-start;
     padding: 0 1rem;
     box-sizing: border-box;
-    @media (max-width: 768px) {
+    ${mobileCss(`
         flex-direction: column;
         align-items: center;
         gap: 2rem;
         padding: 0 1rem;
+        margin-top: 3rem;
+    `)}
     }
 `)
 
@@ -97,11 +100,11 @@ export const Witnesses = () => {
     return (
         <Fullscreen>
             <div css={BoxStyle}>
-                <MyHeader text={t('witnesses.title')} additionalCss={HeaderStyle}/>
+                <MyHeader text={t('witnesses.title')} additionalCss={HeaderStyle} />
                 <div css={ContainerStyle}>
                     <div css={WitnessCardStyle}>
-                        <img 
-                            src={t('witnesses.witness1.image')} 
+                        <img
+                            src={t('witnesses.witness1.image')}
                             alt={t('witnesses.witness1.name')}
                             css={ImageStyle}
                         />
@@ -111,8 +114,8 @@ export const Witnesses = () => {
                         </a>
                     </div>
                     <div css={WitnessCardStyle}>
-                        <img 
-                            src={t('witnesses.witness2.image')} 
+                        <img
+                            src={t('witnesses.witness2.image')}
                             alt={t('witnesses.witness2.name')}
                             css={ImageStyle}
                         />

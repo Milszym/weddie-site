@@ -5,6 +5,7 @@ import { MyHeader } from "../../components/text/MyHeader"
 import { withMyTheme } from "../../theme/theme"
 import { css, Theme } from "@mui/material"
 import { MyButton } from "ui/components/button/MyButton"
+import { mobileCss } from "ui/theme/isMobile"
 
 const BoxStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.text.primary};
@@ -35,7 +36,11 @@ const ContainerStyle = withMyTheme((theme: Theme) => css`
     align-items: center;
     max-width: 800px;
     text-align: center;
+    margin-top: 3rem;
     gap: 2rem;
+    ${mobileCss(`
+        max-width: 90%;
+    `)}
 `)
 
 const DescriptionStyle = withMyTheme((theme: Theme) => css`
@@ -46,20 +51,6 @@ const DescriptionStyle = withMyTheme((theme: Theme) => css`
     font-family: ${theme.typography.body1.fontFamily};
 `)
 
-const ButtonStyle = withMyTheme((theme: Theme) => css`
-    background: ${theme.palette.primary.main};
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-family: ${theme.typography.body1.fontFamily};
-    transition: background-color 0.3s ease;
-    &:hover {
-        background: ${theme.palette.primary.dark};
-    }
-`)
-
 const PreviewImageStyle = withMyTheme((theme: Theme) => css`
     width: 100%;
     max-width: 600px;
@@ -68,6 +59,9 @@ const PreviewImageStyle = withMyTheme((theme: Theme) => css`
     border-radius: 12px;
     margin: 2rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    ${mobileCss(`
+        max-width: 85%;
+    `)}
 `)
 
 export const Gallery = () => {
