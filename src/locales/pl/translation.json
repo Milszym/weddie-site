@@ -4,7 +4,13 @@
         "titlePart2": "' ",
         "titlePart3": "Site",
         "subtitle": "Strona na ślub i wesele",
-        "description": "Nie musicie nic robić, nic konfigurować, o niczym się martwić. Zamawiacie stronę, uzgadniamy szczegóły i tylko czekacie, aż wyślemy Wam link, gdy będzie gotowa 😊"
+        "description": "Nie musicie nic robić, nic konfigurować, o niczym się martwić. Zamawiacie stronę, uzgadniamy szczegóły i tylko czekacie, aż wyślemy Wam link, gdy będzie gotowa 😊",
+        "button1": "Wujek Na Weselu",
+        "button2": "Przebojowa Ciotka",
+        "contact": "Kontakt",
+        "headerText": "Strony na ślub i wesele",
+        "descriptionLine1": "Nie musicie nic robić, nic konfigurować!",
+        "descriptionLine2": "Zamawiacie stronę, uzgadniamy szczegóły i tylko czekacie, aż wyślemy Wam link, gdy będzie gotowa 😊"
     },
     "siteOffers": {
         "title": "Pakiety",
