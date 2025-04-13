@@ -5,11 +5,12 @@ import { css } from "@emotion/react"
 import { ImageResource } from "../../resources/ImageResource"
 import { Button, Typography } from "@mui/material"
 import { Fullscreen } from "../../components/Fullscreen"
-import { mobileCss } from "../../util/isMobile"
+import { isMobile, mobileCss } from "../../util/isMobile"
 import { UNCLE_ON_A_WEDDING_ID } from "../unlceOnAWedding/UncledOnAWedding"
 import { scrollToSection } from "../../util/scroll"
 import { ROCKING_AUNT_ID } from "../rockingAunt/RockingAunt"
 import { CONTACT_ID } from "../contact/Contact"
+import { SiteOffer } from "../siteOffers/SiteOffer"
 
 const TitleContainerStyle = withMyTheme((theme) => css`
     display: flex;
@@ -70,6 +71,7 @@ const CommonNavButtonStyle = (theme: any) => `
     ${mobileCss(`
         margin: 0 0.5rem 0 0;
         margin-left: 1rem;
+        font-size: 4.8vw;
     `)}
 `
 
@@ -83,6 +85,10 @@ const NavButtonStyle = withMyTheme((theme) => css`
 const NavSecondaryButtonStyle = withMyTheme((theme) => css`
     ${CommonNavButtonStyle(theme)}
     color: ${theme.palette.secondary.main};
+    margin-left: 3rem;
+    ${mobileCss(`
+        margin-left: 0;
+    `)}
 `);
 
 const ContactButtonStyle = withMyTheme((theme) => css`
@@ -134,9 +140,14 @@ const NavContainer = css`
 const LeftNavContainer = css`
     display: flex;
     gap: 2rem;
-
+    justify-items: space-between;
     ${mobileCss(`
         gap: 2vw;
+        width: 100%;
+        display: flex
+        flex-direction: row;
+        justify-items: center;
+        justify-content: center;
     `)}
 `;
 
@@ -236,6 +247,12 @@ const DescriptionStyle = withMyTheme((theme) => css`
     `)}
 `);
 
+const ButtonOfferIconStyle = css`
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+`;
+
 export const Title = () => {
     const { t } = useTranslation();
 
@@ -243,15 +260,17 @@ export const Title = () => {
         <div css={NavContainer}>
             <div css={LeftNavContainer}>
                 <Button css={NavSecondaryButtonStyle} onClick={() => scrollToSection(UNCLE_ON_A_WEDDING_ID)}>
+                    <img src={ImageResource.uncleOnWedding} css={ButtonOfferIconStyle} />
                     {t('title.button1')}
                 </Button>
                 <Button css={NavButtonStyle} onClick={() => scrollToSection(ROCKING_AUNT_ID)}>
+                    <img src={ImageResource.rockingAunt} css={ButtonOfferIconStyle} />
                     {t('title.button2')}
                 </Button>
             </div>
-            <Button css={ContactButtonStyle} onClick={() => scrollToSection(CONTACT_ID)}>
+            {!isMobile() && <Button css={ContactButtonStyle} onClick={() => scrollToSection(CONTACT_ID)}>
                 {t('title.contact')}
-            </Button>
+            </Button>}
         </div>
 
         <div css={ContentStyle}>
