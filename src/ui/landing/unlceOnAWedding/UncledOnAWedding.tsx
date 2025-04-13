@@ -6,6 +6,7 @@ import { ImageResource } from "../../resources/ImageResource"
 import { CircleImage } from "../../components/image/CircleImage"
 import { UncleOnAWeddingContent } from "./UncledOnAWeddingContent"
 import { MOBILE_WIDTH, mobileCss } from "../../util/isMobile"
+import { PriceTag } from "../../components/price/PriceTag"
 
 export const UNCLE_ON_A_WEDDING_ID = 'uncleOnAWedding'
 
@@ -34,6 +35,16 @@ const OfferImageWrapperStyle = withMyTheme((theme: Theme) => css`
     `)}
 `)
 
+const PriceTagWrapperStyle = withMyTheme((theme: Theme) => css`
+    position: absolute;
+    top: 7vh;
+    right: 7vh;
+    ${mobileCss(`
+        top: 2vh;
+        right: 2vh;
+    `)}
+`)
+
 export const UncleOnAWedding = () => {
     return <Fullscreen id={UNCLE_ON_A_WEDDING_ID} additionalCss={OfferStyle}>
         <div css={OfferBoxStyle}>
@@ -41,6 +52,9 @@ export const UncleOnAWedding = () => {
         </div>
         <div css={OfferImageWrapperStyle}>
             <CircleImage icon={ImageResource.uncleOnWedding} />
+        </div>
+        <div css={PriceTagWrapperStyle}>
+            <PriceTag price={"699"} />
         </div>
     </Fullscreen>
 }

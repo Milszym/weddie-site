@@ -9,6 +9,7 @@ import { MyHeader } from "../../components/text/MyHeader"
 import { CircleImage } from "../../components/image/CircleImage"
 import { RockingAuntContent } from "./RockngAuntContent"
 import { MOBILE_WIDTH, mobileCss } from "../../util/isMobile"
+import { PriceTag } from "../../components/price/PriceTag"
 
 export const ROCKING_AUNT_ID = "rockingAunt"
 
@@ -22,9 +23,9 @@ const OfferBoxStyle = withMyTheme((theme: Theme) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media(max-width: ${MOBILE_WIDTH}px) {
+    ${mobileCss(`
         max-width: 90vw;
-    }
+    `)} 
 `)
 
 const OfferImageWrapperStyle = withMyTheme((theme: Theme) => css`
@@ -37,6 +38,16 @@ const OfferImageWrapperStyle = withMyTheme((theme: Theme) => css`
     `)}
 `)
 
+const PriceTagWrapperStyle = withMyTheme((theme: Theme) => css`
+    position: absolute;
+    top: 7vh;
+    right: 7vh;
+    ${mobileCss(`
+        top: 2vh;
+        right: 2vh;
+    `)}
+`)
+
 export const RockingAunt = () => {
     const { t } = useTranslation()
 
@@ -46,6 +57,9 @@ export const RockingAunt = () => {
         </div>
         <div css={OfferImageWrapperStyle}>
             <CircleImage icon={ImageResource.rockingAunt} />
+        </div>
+        <div css={PriceTagWrapperStyle}>
+            <PriceTag price={"depends"} currency={""}/>
         </div>
     </Fullscreen>
 }

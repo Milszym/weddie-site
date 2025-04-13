@@ -22,7 +22,7 @@ const InstructionNumberStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.main};
     font-family: ${theme.typography.h1.fontFamily};
     ${mobileCss(`
-        font-size: 2.5rem; 
+        font-size: 3rem; 
      `)}
 `)
 
@@ -32,7 +32,7 @@ const InstructionTextStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.text.primary};
     font-family: ${theme.typography.body1.fontFamily};
     ${mobileCss(`
-       font-size: 1.2rem; 
+       font-size: 1.75rem; 
     `)}
 `)
 

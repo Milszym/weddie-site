@@ -5,7 +5,7 @@ import { Fullscreen } from "../../components/Fullscreen"
 import { MyHeader } from "../../components/text/MyHeader"
 import { MyText } from "../../components/text/MyText"
 import { useTranslation } from "react-i18next"
-import { isMobile, MOBILE_WIDTH } from "../../util/isMobile"
+import { isMobile, MOBILE_WIDTH, mobileCss } from "../../util/isMobile"
 import { ImageResource } from "../../resources/ImageResource"
 import PersonIcon from '@mui/icons-material/Person';
 
@@ -25,22 +25,37 @@ const OffersStyle = withMyTheme(() => css`
     gap: 5vw;
 `)
 
-const OfferBoxStyle = withMyTheme((theme: Theme) => css`
-    display: flex;
+const CommonOfferBoxStyle = `
+   display: flex;
     width: 40vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     justify-items: center;
     gap: 5vh;
-    @media (max-width: ${MOBILE_WIDTH}px) {
+      ${mobileCss(`
         flex-basis: 100%;
-    }
+        gap: 1.8vh;
+    `)}
+`
+
+const SecondOfferBoxStyle = withMyTheme((theme: Theme) => css`
+    ${CommonOfferBoxStyle}
+    ${mobileCss(`
+        margin-top: 3.5vh;
+    `)}
+`)
+
+const OfferBoxStyle = withMyTheme((theme: Theme) => css`
+    ${CommonOfferBoxStyle}
 `)
 
 const OfferBoxDescriptionStyle = withMyTheme((theme: Theme) => css`
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-align: center;
+    ${mobileCss(`
+        font-size: 1.55rem;
+    `)}
 `)
 
 const IconContainerStyle = withMyTheme((theme: Theme) => css`
@@ -55,6 +70,9 @@ const IconContainerStyle = withMyTheme((theme: Theme) => css`
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    ${mobileCss(`
+        width: 35vw;
+    `)}
 `)
 
 const PrimaryIconStyle = withMyTheme((theme: Theme) => css`
@@ -66,6 +84,9 @@ const PrimaryIconStyle = withMyTheme((theme: Theme) => css`
 const SecondaryIconStyle = withMyTheme((theme: Theme) => css`
     font-size: 6em;
     color: ${theme.palette.secondary.main};
+    ${mobileCss(`
+        font-size: 4em;
+    `)}
 `)
 
 const PrimaryTitleStyle = withMyTheme((theme: Theme) => css`
@@ -94,14 +115,14 @@ export const DomainInstructions = () => {
                         <PersonIcon css={SecondaryIconStyle} />
                     </div>
                     <MyText text={t('domainInstructions.customDomain.title')} additionalCss={PrimaryTitleStyle} />
-                    {!isMobile() && <MyText text={t('domainInstructions.customDomain.description')} additionalCss={OfferBoxDescriptionStyle} />}
+                    <MyText text={t('domainInstructions.customDomain.description')} additionalCss={OfferBoxDescriptionStyle} />
                 </div>
-                <div css={OfferBoxStyle}>
+                <div css={SecondOfferBoxStyle}>
                     <div css={IconContainerStyle}>
                         <img src={ImageResource.logo} alt="Domain Icon" css={PrimaryIconStyle} />
                     </div>
                     <MyText text={t('domainInstructions.subdomain.title')} additionalCss={SecondaryTitleStyle} />
-                    {!isMobile() && <MyText text={t('domainInstructions.subdomain.description')} additionalCss={OfferBoxDescriptionStyle} />}
+                    <MyText text={t('domainInstructions.subdomain.description')} additionalCss={OfferBoxDescriptionStyle} />
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import { openUrl } from "../../util/openUrl"
 import { scrollToSection } from "../../util/scroll"
 import { CONTACT_ID } from "../contact/Contact"
 import { DOMAIN_INSTRUCTIONS_ID } from "../domainInstructions/DomainInstructions"
-import { isMobile } from "../../util/isMobile"
+import { isMobile, mobileCss } from "../../util/isMobile"
 
 const TitleStyle = withMyTheme((theme: Theme) => css`
     font-size: 1.8rem;
@@ -38,6 +38,9 @@ const InstructionsBoxStyle = withMyTheme(() => css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    ${mobileCss(`
+        gap: 0.5rem;
+    `)}
 `)
 
 const ButtonsRow = withMyTheme(() => css`
@@ -46,10 +49,12 @@ const ButtonsRow = withMyTheme(() => css`
     flex-wrap: no-wrap;
     gap: 1.5rem;
     justify-content: center;
+    ${mobileCss(`
+        gap: 2.2rem;
+    `)}
 `)
 
 const ButtonStyle = withMyTheme(() => css`
-    max-width: 15rem;
 `)
 
 const SpacerStyle = withMyTheme(() => css`

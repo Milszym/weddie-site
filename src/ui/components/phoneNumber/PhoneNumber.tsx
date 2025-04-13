@@ -6,7 +6,7 @@ import { withMyTheme } from "../../theme/theme";
 import { css } from "@emotion/react";
 
 const PhoneNumberStyle = withMyTheme((theme) => css`
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: ${theme.palette.primary.main};
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -14,6 +14,9 @@ const PhoneNumberStyle = withMyTheme((theme) => css`
         transform: scale(1.1);
         z-index: 1;
     }
+    ${mobileCss(`
+        font-size: 2.5rem;
+    `)}
 `)
 
 interface Props {

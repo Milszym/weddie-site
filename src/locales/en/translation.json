@@ -1,4 +1,7 @@
 {
+    "common": {
+        "price": "Price"
+    },
     "title": {
         "titlePart1": "Weddie ",
         "titlePart2": "' ",

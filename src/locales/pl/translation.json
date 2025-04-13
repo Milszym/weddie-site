@@ -1,4 +1,7 @@
 {
+    "common": {
+        "price": "Cena"
+    },
     "title": {
         "titlePart1": "Weddie",
         "titlePart2": "' ",
@@ -39,7 +42,7 @@
         "offerTitle": "Przebojowa Ciotka",
         "instructionTitle": "Jak to działa?",
         "instructions": {
-            "step1": "Spotykacie się z nami online i opowiadacie o swojej wizji wymarzonej strony 🤩 Możecie przygotować swoje inspiracje.",
+            "step1": "Spotykacie się z nami online i opowiadacie o swojej wizji wymarzonej strony 🤩 Możecie przygotować swoje inspiracje.",
             "step2": "Wspólnie ustalamy zakres strony, a następnie my przygotowujemy dla Was poglądowy projekt z wyceną i estymacją.",
             "step3": "Spotykamy się w celu akceptacji projektu, wprowadzamy ewentualne poprawki i rozpoczynamy pracę nad projektem.",
             "step4": "Przemyślcie pod jakim adresem chcielibyście mieć stronę. Więcej o adresach przeczytacie poniżej:"
@@ -74,7 +77,7 @@
         "contactLabel": "Kontakt",
         "contactPlaceholder": "Email lub numer telefonu",
         "messageLabel": "Wiadomość",
-        "messagePlaceholder": "Napiszcie o wybranym pakiecie. Opowiedzcie o stylu Waszego ślubu i wesela lub po prostu napiszcie do nas  żeby umówić z nami spotkanie 😊",
+        "messagePlaceholder": "Napiszcie o wybranym pakiecie. Opowiedzcie o stylu Waszego ślubu i wesela lub po prostu napiszcie do nas  żeby umówić z nami spotkanie 😊",
         "send": "Wyślij wiadomość",
         "phoneNumber": "+48 665 123 549"
     }

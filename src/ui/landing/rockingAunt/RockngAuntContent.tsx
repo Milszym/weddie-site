@@ -10,7 +10,7 @@ import { openUrl } from "../../util/openUrl"
 import { scrollToSection } from "../../util/scroll"
 import { CONTACT_ID } from "../contact/Contact"
 import { DOMAIN_INSTRUCTIONS_ID } from "../domainInstructions/DomainInstructions"
-import { isMobile } from "../../util/isMobile"
+import { isMobile, mobileCss } from "../../util/isMobile"
 
 const TitleStyle = withMyTheme((theme: Theme) => css`
     font-size: 1.8rem;
@@ -39,18 +39,12 @@ const InstructionsBoxStyle = withMyTheme(() => css`
     display: flex;
     flex-direction: column;
     align-items: center;
-`)
-
-const ButtonsRow = withMyTheme(() => css`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    gap: 1.5rem;
-    justify-content: center;
+    ${mobileCss(`
+        gap: 0.5rem;
+    `)}
 `)
 
 const ButtonStyle = withMyTheme(() => css`
-    max-width: 15rem;
 `)
 
 const SpacerStyle = withMyTheme(() => css`
@@ -67,20 +61,8 @@ export const SECOND_TEMPLATE_URL = 'https://monikaikarol.pl'
 export const RockingAuntContent = () => {
     const { t } = useTranslation()
 
-    const onFirstTemplateClick = () => {
-        openUrl(FIRST_TEMPLATE_URL)
-    }
-
-    const onSecondTemplateClick = () => {
-        openUrl(SECOND_TEMPLATE_URL)
-    }
-
     const onDomainInstructionsClick = () => {
         scrollToSection(DOMAIN_INSTRUCTIONS_ID)
-    }
-
-    const onContactClick = () => {
-        scrollToSection(CONTACT_ID)
     }
 
     return <>

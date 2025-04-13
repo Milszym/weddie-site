@@ -28,7 +28,11 @@ const ContactStyleContent = withMyTheme((theme) => css`
 `)
 
 const ContactDescriptionStyle = withMyTheme((theme) => css`
+    font-size: 1.5rem;
     text-align: center;
+    ${mobileCss(`
+        font-size: 2rem;
+    `)} 
 `)
 
 const ContactInput = withMyTheme((theme) => css`

@@ -8,6 +8,8 @@ const HeaderStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
     color: ${theme.palette.primary.main};
     font-size: 52px;
     fontWeight: 700;
+    text-align: center;
+    max-width: 90%;
     font-family: ${theme.typography.h1.fontFamily};
     ${additionalCss ? additionalCss(theme) : ''}
 `)
