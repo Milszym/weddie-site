@@ -37,7 +37,14 @@
     "rockingAunt": {
         "title": "Offer",
         "offerTitle": "Rocking aunt",
-        "instructionTitle": "How does it work?"
+        "instructionTitle": "How does it work?",
+        "instructions": {
+            "step1": "Meet with us online and tell us about your vision for your dream website 🤩 You can prepare your inspirations in advance.",
+            "step2": "Together we determine the scope of the website, and then we prepare a conceptual design with pricing and estimation for you.",
+            "step3": "We meet to approve the design, make any necessary adjustments, and then begin work on the project.",
+            "step4": "Think about what address you would like for your website. You can read more about addresses below:"
+        },
+        "domainInstructions": "Website Addresses"
     },
     "domainInstructions": {
         "title": "Choose Your Perfect Domain",

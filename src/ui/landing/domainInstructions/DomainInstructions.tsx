@@ -5,9 +5,9 @@ import { Fullscreen } from "../../components/Fullscreen"
 import { MyHeader } from "../../components/text/MyHeader"
 import { MyText } from "../../components/text/MyText"
 import { useTranslation } from "react-i18next"
-import DomainIcon from '@mui/icons-material/Domain'
-import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight'
 import { isMobile, MOBILE_WIDTH } from "../../util/isMobile"
+import { ImageResource } from "../../resources/ImageResource"
+import PersonIcon from '@mui/icons-material/Person';
 
 export const DOMAIN_INSTRUCTIONS_ID = 'domainInstructions'
 
@@ -59,6 +59,7 @@ const IconContainerStyle = withMyTheme((theme: Theme) => css`
 
 const PrimaryIconStyle = withMyTheme((theme: Theme) => css`
     font-size: 6em;
+    width: 80%;
     color: ${theme.palette.primary.main};
 `)
 
@@ -84,20 +85,20 @@ const SecondaryTitleStyle = withMyTheme((theme: Theme) => css`
 export const DomainInstructions = () => {
     const { t } = useTranslation()
 
-    return <Fullscreen>
+    return <Fullscreen id={DOMAIN_INSTRUCTIONS_ID}>
         <div css={OffersContainerStyle}>
             <MyHeader text={t('domainInstructions.title')} />
             <div css={OffersStyle}>
                 <div css={OfferBoxStyle}>
                     <div css={IconContainerStyle}>
-                        <DomainIcon css={PrimaryIconStyle} />
+                        <PersonIcon css={SecondaryIconStyle} />
                     </div>
                     <MyText text={t('domainInstructions.customDomain.title')} additionalCss={PrimaryTitleStyle} />
                     {!isMobile() && <MyText text={t('domainInstructions.customDomain.description')} additionalCss={OfferBoxDescriptionStyle} />}
                 </div>
                 <div css={OfferBoxStyle}>
                     <div css={IconContainerStyle}>
-                        <SubdirectoryArrowRightIcon css={SecondaryIconStyle} />
+                        <img src={ImageResource.logo} alt="Domain Icon" css={PrimaryIconStyle} />
                     </div>
                     <MyText text={t('domainInstructions.subdomain.title')} additionalCss={SecondaryTitleStyle} />
                     {!isMobile() && <MyText text={t('domainInstructions.subdomain.description')} additionalCss={OfferBoxDescriptionStyle} />}

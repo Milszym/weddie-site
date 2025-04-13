@@ -5,6 +5,11 @@ import { css } from "@emotion/react"
 import { ImageResource } from "../../resources/ImageResource"
 import { Button, Typography } from "@mui/material"
 import { Fullscreen } from "../../components/Fullscreen"
+import { mobileCss } from "../../util/isMobile"
+import { UNCLE_ON_A_WEDDING_ID } from "../unlceOnAWedding/UncledOnAWedding"
+import { scrollToSection } from "../../util/scroll"
+import { ROCKING_AUNT_ID } from "../rockingAunt/RockingAunt"
+import { CONTACT_ID } from "../contact/Contact"
 
 const TitleContainerStyle = withMyTheme((theme) => css`
     display: flex;
@@ -12,7 +17,14 @@ const TitleContainerStyle = withMyTheme((theme) => css`
     align-items: center;
     justify-content: space-between;
     height: 100vh;
-    background: linear-gradient(to right, #f9f9f7, #f0f1eb);
+    background: linear-gradient(to left, #94AE98, #FFFFFF);
+
+    ${mobileCss(`
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(to top, #94AE98, #FFFFFF);
+    `)}
 `);
 
 const buttonAnimationStyle = (theme: any) => `
@@ -41,25 +53,41 @@ const buttonAnimationStyle = (theme: any) => `
     }
 `
 
-const NavButtonStyle = withMyTheme((theme) => css`
+const CommonNavButtonStyle = (theme: any) => `
     font-family: 'Cormorant', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     text-transform: none;
-    color: #94AE98;
+    color: ${theme.palette.primary.main};
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    margin: 0 1rem 0 0;
+    margin-left: 1rem;
     position: relative;
     
     ${buttonAnimationStyle(theme)}
+
+    ${mobileCss(`
+        margin: 0 0.5rem 0 0;
+        margin-left: 1rem;
+    `)}
+`
+
+const NavButtonStyle = withMyTheme((theme) => css`
+    ${CommonNavButtonStyle(theme)}
+    ${mobileCss(`
+        margin-left: 1rem;
+    `)}
+`);
+
+const NavSecondaryButtonStyle = withMyTheme((theme) => css`
+    ${CommonNavButtonStyle(theme)}
+    color: ${theme.palette.secondary.main};
 `);
 
 const ContactButtonStyle = withMyTheme((theme) => css`
     font-family: 'Cormorant', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     text-transform: none;
     color: #000;
@@ -70,6 +98,10 @@ const ContactButtonStyle = withMyTheme((theme) => css`
     position: relative;
     
     ${buttonAnimationStyle(theme)}
+
+    ${mobileCss(`
+        margin-right: 1rem;
+    `)}
 `);
 
 const NavContainer = css`
@@ -91,12 +123,21 @@ const NavContainer = css`
             transform: translateY(0);
         }
     }
+
+    ${mobileCss(`
+        position: absolute;
+        top: 1rem;
+        margin-bottom: 2rem;
+    `)}
 `;
 
 const LeftNavContainer = css`
     display: flex;
     gap: 2rem;
-    margin-left: 2rem;
+
+    ${mobileCss(`
+        gap: 2vw;
+    `)}
 `;
 
 const ContentStyle = css`
@@ -105,44 +146,47 @@ const ContentStyle = css`
     align-items: flex-start;
     justify-content: center;
     width: 50%;
+    margin-right: 5vw;
     margin-left: 10vw;
+
+    ${mobileCss(`
+        width: 90%;
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 2rem;
+    `)}
 `;
 
 const LogoStyle = css`
     width: 400px;
     margin-bottom: 2.5rem;
+
+    ${mobileCss(`
+        width: 80%;
+        margin-bottom: 1.5rem;
+    `)}
 `;
 
 const LaptopImageWrapperStyle = css`
-    width: 45%;
-    max-width: 550px;
+    width: 55%;
+    min-width: 300px;
     margin-right: 15vw;
+    margin-left: 5vw;
     position: relative;
+
+    ${mobileCss(`
+        width: 90%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 2vh;
+        margin-bottom: 2rem;
+    `)}
 `;
 
 const LaptopImageStyle = css`
     width: 100%;
-    max-width: 550px;
-`;
-
-const LaptopContentStyle = css`
-    position: absolute;
-    top: 5.4%;
-    left: 10.1%;
-    width: 79.7%;
-    height: 75.5%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 2px;
-    overflow: hidden;
-    z-index: 2;
-`;
-
-const LaptopContentItselfStyle = css`
-    width: 45vw;
-    height: 52vh;
-    transform: scale(0.6);
-    transform-origin: top left;
-    border: none;
 `;
 
 const LaptopImageContentWrapperStyle = css`
@@ -167,6 +211,12 @@ const HeaderTextStyle = css`
     text-align: left;
     margin-bottom: 1.5rem;
     font-weight: 400;
+
+    ${mobileCss(`
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    `)}
 `;
 
 const DescriptionStyle = withMyTheme((theme) => css`
@@ -177,6 +227,13 @@ const DescriptionStyle = withMyTheme((theme) => css`
     max-width: 600px;
     line-height: 1.5;
     margin-bottom: 1.5rem;
+
+    ${mobileCss(`
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    `)}
 `);
 
 export const Title = () => {
@@ -185,10 +242,16 @@ export const Title = () => {
     return <Fullscreen additionalCss={TitleContainerStyle}>
         <div css={NavContainer}>
             <div css={LeftNavContainer}>
-                <Button css={NavButtonStyle}>{t('title.button1')}</Button>
-                <Button css={NavButtonStyle} style={{ color: '#C45526' }}>{t('title.button2')}</Button>
+                <Button css={NavSecondaryButtonStyle} onClick={() => scrollToSection(UNCLE_ON_A_WEDDING_ID)}>
+                    {t('title.button1')}
+                </Button>
+                <Button css={NavButtonStyle} onClick={() => scrollToSection(ROCKING_AUNT_ID)}>
+                    {t('title.button2')}
+                </Button>
             </div>
-            <Button css={ContactButtonStyle}>{t('title.contact')}</Button>
+            <Button css={ContactButtonStyle} onClick={() => scrollToSection(CONTACT_ID)}>
+                {t('title.contact')}
+            </Button>
         </div>
 
         <div css={ContentStyle}>
@@ -201,15 +264,6 @@ export const Title = () => {
         </div>
 
         <div css={LaptopImageWrapperStyle}>
-            {false && <div css={LaptopContentStyle}>
-                <iframe
-                    css={LaptopContentItselfStyle}
-                    src="https://monikaikarol.pl/"
-                    title="Laptop Screen Content"
-                    frameBorder="0"
-                    loading="lazy"
-                />
-            </div>}
             <div css={LaptopImageContentWrapperStyle}>
                 <img src={ImageResource.laptopContent} css={LaptopImageContentStyle} alt="Laptop Content" />
             </div>

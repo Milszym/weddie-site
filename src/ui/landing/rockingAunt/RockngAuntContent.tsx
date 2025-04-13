@@ -88,22 +88,17 @@ export const RockingAuntContent = () => {
         <MyHeader text={t('rockingAunt.offerTitle')} additionalCss={OfferTitleStyle} />
         <MyHeader text={t('rockingAunt.instructionTitle')} additionalCss={InstructionTitleStyle} />
         <div css={InstructionsBoxStyle}>
-            <Instruction positionNumber={'1.'} text={t('uncleOnAWedding.instructions.step1')} />
+            <Instruction positionNumber={'1.'} text={t('rockingAunt.instructions.step1')} />
             {isMobile() && <div css={ButtonSpacer} />}
-            <div css={ButtonsRow}>
-                <MyButton text={t('uncleOnAWedding.firstTemplate')} onClick={onFirstTemplateClick} />
-                <MyButton text={t('uncleOnAWedding.secondTemplate')} onClick={onSecondTemplateClick} />
-            </div>
             <div css={SpacerStyle} />
-            <Instruction positionNumber={'2.'} text={t('uncleOnAWedding.instructions.step2')} />
+            <Instruction positionNumber={'2.'} text={t('rockingAunt.instructions.step2')} />
             <div css={SpacerStyle} />
-            <Instruction positionNumber={'3.'} text={t('uncleOnAWedding.instructions.step3')} />
+            <Instruction positionNumber={'3.'} text={t('rockingAunt.instructions.step3')} />
             {isMobile() && <div css={ButtonSpacer} />}
-            <MyButton text={t('uncleOnAWedding.domainInstructions')} onClick={onDomainInstructionsClick} additionalCss={ButtonStyle} />
             <div css={SpacerStyle} />
-            <Instruction positionNumber={'4.'} text={t('uncleOnAWedding.instructions.step4')} />
+            <Instruction positionNumber={'4.'} text={t('rockingAunt.instructions.step4')} />
             {isMobile() && <div css={ButtonSpacer} />}
-            <MyButton text={t('uncleOnAWedding.contact')} onClick={onContactClick} additionalCss={ButtonStyle} />
+            <MyButton text={t('rockingAunt.domainInstructions')} onClick={onDomainInstructionsClick} additionalCss={ButtonStyle} />
         </div>
     </>
 }
