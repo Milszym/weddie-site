@@ -1,16 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { useTranslation } from "react-i18next"
-import { withMyTheme } from "../../theme/theme"
-import { css } from "@emotion/react"
-import { ImageResource } from "../../resources/ImageResource"
-import { Button, Typography } from "@mui/material"
-import { Fullscreen } from "../../components/Fullscreen"
-import { isMobile, mobileCss } from "../../util/isMobile"
-import { UNCLE_ON_A_WEDDING_ID } from "../unlceOnAWedding/UncledOnAWedding"
-import { scrollToSection } from "../../util/scroll"
-import { ROCKING_AUNT_ID } from "../rockingAunt/RockingAunt"
-import { CONTACT_ID } from "../contact/Contact"
-import { SiteOffer } from "../siteOffers/SiteOffer"
+import {useTranslation} from "react-i18next"
+import {withMyTheme} from "../../theme/theme"
+import {css} from "@emotion/react"
+import {ImageResource} from "../../resources/ImageResource"
+import {Button, Typography} from "@mui/material"
+import {Fullscreen} from "../../components/Fullscreen"
+import {isMobile, mobileCss} from "../../util/isMobile"
+import {UNCLE_ON_A_WEDDING_ID} from "../unlceOnAWedding/UncledOnAWedding"
+import {scrollToSection} from "../../util/scroll"
+import {ROCKING_AUNT_ID} from "../rockingAunt/RockingAunt"
+import {CONTACT_ID} from "../contact/Contact"
 
 const TitleContainerStyle = withMyTheme((theme) => css`
     display: flex;
