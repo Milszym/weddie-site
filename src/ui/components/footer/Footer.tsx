@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { useTranslation, Trans } from "react-i18next"
-import { withMyTheme } from "../../theme/theme"
-import { css, Theme } from "@mui/material"
+import {Trans} from "react-i18next"
+import {withMyTheme} from "../../theme/theme"
+import {css, Theme} from "@mui/material"
 
 const FooterStyle = withMyTheme((theme: Theme) => css`
     background: rgba(196, 85, 38, 0.05);
@@ -10,6 +10,9 @@ const FooterStyle = withMyTheme((theme: Theme) => css`
     text-align: center;
     font-family: ${theme.typography.body1.fontFamily};
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `)
 
 const ContainerStyle = withMyTheme((theme: Theme) => css`
@@ -55,8 +58,6 @@ const FreepikCreditsStyle = withMyTheme((theme: Theme) => css`
 `)
 
 export const Footer = () => {
-    const { t } = useTranslation()
-
     return (
         <footer css={FooterStyle}>
             <div css={ContainerStyle}>
@@ -69,14 +70,14 @@ export const Footer = () => {
                         . All rights reserved.
                     </Trans>
                 </div>
-            </div>
-            <div css={FreepikCreditsStyle}>
-                <Trans i18nKey="footer.freepikCredits">
-                    Icons and illustrations designed by
-                    <a href="https://freepik.com" target="_blank" rel="noopener noreferrer" css={SubtleLinkStyle}>
-                        Freepik.com
-                    </a>
-                </Trans>
+                <div css={CreditsStyle}>
+                    <Trans i18nKey="footer.freepikCredits">
+                        Icons and illustrations designed by
+                        <a href="https://freepik.com" target="_blank" rel="noopener noreferrer" css={SubtleLinkStyle}>
+                            Freepik.com
+                        </a>
+                    </Trans>
+                </div>
             </div>
         </footer>
     )

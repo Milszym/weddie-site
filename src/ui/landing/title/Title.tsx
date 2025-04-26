@@ -1,26 +1,30 @@
 /** @jsxImportSource @emotion/react */
-import { useTranslation } from "react-i18next"
-import { Fullscreen } from "../../components/Fullscreen"
-import { MyHeader } from "../../components/text/MyHeader"
-import { withMyTheme } from "../../theme/theme"
-import { css, Theme } from "@mui/material"
-import { useEffect, useState } from "react"
-import { MyButton } from "../../components/button/MyButton"
+import {useTranslation} from "react-i18next"
+import {Fullscreen} from "../../components/Fullscreen"
+import {MyHeader} from "../../components/text/MyHeader"
+import {withMyTheme} from "../../theme/theme"
+import {css, Theme} from "@mui/material"
+import {useEffect, useState} from "react"
+import {MyButton} from "../../components/button/MyButton"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import { getHexWithOpacity } from "../../theme/getHexWithOpacity"
+import {getHexWithOpacity} from "../../theme/getHexWithOpacity"
+import {mobileCss} from "../../theme/isMobile"
+import {tabletCss} from "../../theme/isTablet"
 
 const TitleContainerStyle = withMyTheme((theme: Theme) => css`
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Align content to the bottom */
+    justify-content: flex-end;
     align-items: center;
     font-family: ${theme.typography.body1.fontFamily};
     position: relative;
-    overflow: hidden; /* To ensure the background stays within the container */
-    z-index: 1; /* Establish a stacking context */
-    padding-bottom: 2rem; /* Add bottom margin as requested */
-    
+    overflow: hidden;
+    z-index: 1;
+
+    ${mobileCss(`
+        justify-content: center;
+    `)}
     /* Add a pseudo-element for the background with fading effect */
     &::before {
         content: '';
@@ -53,7 +57,7 @@ const TitleContainerStyle = withMyTheme((theme: Theme) => css`
         );
         z-index: -1;
     }
-    
+
     /* Add a second pseudo-element for the secondary accent color overlay */
     &::after {
         content: '';
@@ -80,28 +84,43 @@ const ContentWrapperStyle = withMyTheme((theme: Theme) => css`
     z-index: 2;
     /* Add a subtle text shadow for better readability against the background */
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+    ${tabletCss(`
+        padding: 1.75rem 1rem;
+        width: 95%;
+    `)}
+    ${mobileCss(`
+        padding: 1.5rem 0.75rem;
+        width: 95%;
+    `)}
 `)
 
 const HeaderStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.main};
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     margin-bottom: 1.5rem;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-    @media (max-width: 768px) {
-        font-size: 2.2rem;
-    }
+    ${tabletCss(`
+        margin-bottom: 1.25rem;
+    `)}
+    ${mobileCss(`
+        margin-bottom: 1rem;
+    `)}
 `)
 
 const DateStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.dark};
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 3rem;
     font-weight: 300;
     font-family: ${theme.typography.body1.fontFamily};
-    @media (max-width: 768px) {
-        font-size: 1.3rem;
-    }
+    ${tabletCss(`
+        margin-bottom: 2.5rem;
+    `)}
+    ${mobileCss(`
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    `)}
 `)
 
 const CountdownContainerStyle = withMyTheme((theme: Theme) => css`
@@ -110,13 +129,17 @@ const CountdownContainerStyle = withMyTheme((theme: Theme) => css`
     gap: 2.5rem;
     margin-bottom: 4rem;
     color: ${theme.palette.text.secondary};
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-family: ${theme.typography.body1.fontFamily};
-    @media (max-width: 768px) {
+    ${tabletCss(`
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+    `)}
+    ${mobileCss(`
         gap: 1.5rem;
-        font-size: 1rem;
         flex-wrap: wrap;
-    }
+        margin-bottom: 3rem;
+    `)}
 `)
 
 // Add a subtle background to countdown items for better readability
@@ -129,25 +152,32 @@ const CountdownItemStyle = withMyTheme((theme: Theme) => css`
     background-color: ${getHexWithOpacity('#FFFFFF', 0.6)};
     padding: 0.5rem 1rem;
     border-radius: 8px;
+
+    ${tabletCss(`
+        min-width: 65px;
+        padding: 0.4rem 0.9rem;
+    `)}
+    ${mobileCss(`
+        min-width: 60px;
+        padding: 0.3rem 0.8rem;
+        margin: 0.25rem;
+    `)}
     &:hover {
         transform: translateY(-3px);
     }
 `)
 
 const CountdownNumberStyle = withMyTheme((theme: Theme) => css`
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 500;
     color: ${theme.palette.secondary.main};
     line-height: 1.1;
     margin-bottom: 0.3rem;
     font-family: ${theme.typography.body1.fontFamily};
-    @media (max-width: 768px) {
-        font-size: 2.5rem;
-    }
 `)
 
 const CountdownLabelStyle = withMyTheme((theme: Theme) => css`
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
     text-transform: uppercase;
     letter-spacing: 1px;
     color: ${theme.palette.text.disabled};

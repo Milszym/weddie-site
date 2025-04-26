@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { useTranslation } from "react-i18next"
-import { Fullscreen } from "../../components/Fullscreen"
-import { MyHeader } from "../../components/text/MyHeader"
-import { withMyTheme } from "../../theme/theme"
-import { css, Theme } from "@mui/material"
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
-import { getHexWithOpacity } from "../../theme/getHexWithOpacity"
-import { useEffect, useState } from "react"
+import {useTranslation} from "react-i18next"
+import {Fullscreen} from "../../components/Fullscreen"
+import {MyHeader} from "../../components/text/MyHeader"
+import {withMyTheme} from "../../theme/theme"
+import {css, Theme} from "@mui/material"
+import {GoogleMap, useJsApiLoader} from '@react-google-maps/api'
+import {getHexWithOpacity} from "../../theme/getHexWithOpacity"
+import {useEffect, useState} from "react"
+import {mobileCss} from "../../theme/isMobile"
+import {tabletCss} from "../../theme/isTablet"
 
 const BoxStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.text.primary};
@@ -23,24 +25,24 @@ const BoxStyle = withMyTheme((theme: Theme) => css`
 
 const HeaderStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.main};
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
     text-align: center;
-    @media (max-width: 768px) {
-        font-size: 2rem;
-    }
+    ${mobileCss(`
+        margin-bottom: 1.5rem;
+    `)}
 `)
 
 const SubHeaderStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.primary.dark};
-    font-size: 2rem;
     margin-bottom: 1rem;
     font-family: ${theme.typography.h1.fontFamily};
     font-weight: 500;
+    font-size: clamp(2.3rem, 7vw, 2.5rem);
     text-align: left;
-    @media (max-width: 768px) {
-        font-size: 1.5rem;
-    }
+    ${mobileCss(`
+        text-align: center;
+    `)}
 `)
 
 const ContentStyle = withMyTheme((theme: Theme) => css`
@@ -49,21 +51,32 @@ const ContentStyle = withMyTheme((theme: Theme) => css`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top: 2.5rem;
     max-width: 1200px;
     gap: 3rem;
     padding: 0 1rem;
     box-sizing: border-box;
-    @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: stretch;
+    ${tabletCss(`
         gap: 2rem;
-        padding: 0 1rem;
-    }
+        padding: 0 2rem;
+        max-width: 95%;
+    `)}
+    ${mobileCss(`
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 90%;
+        padding: 0;
+    `)}
 `)
 
 const TextContentStyle = withMyTheme((theme: Theme) => css`
     flex: 1;
     text-align: left;
+    ${mobileCss(`
+        text-align: center;
+        margin-bottom: 1rem;
+    `)}
 `)
 
 const MapContainerStyle = withMyTheme((theme: Theme) => css`
@@ -73,14 +86,27 @@ const MapContainerStyle = withMyTheme((theme: Theme) => css`
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    ${tabletCss(`
+        height: 350px;
+        width: 70vw;
+    `)}
+    ${mobileCss(`
+        aspect-ratio: 1 / 1;
+        height: auto;
+        width: 50vw;
+    `)}
 `)
 
 const DescriptionStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.text.primary};
-    font-size: 1.2rem;
     line-height: 1.6;
     margin: 1rem 0 1.5rem 0;
+    font-size: clamp(1.3rem, 1.4vw, 1.8rem);
     font-family: ${theme.typography.body1.fontFamily};
+    ${mobileCss(`
+        line-height: 1.5;
+        text-align: center;
+    `)}
 `)
 
 const HrefStyle = withMyTheme((theme: Theme) => css`
@@ -89,16 +115,27 @@ const HrefStyle = withMyTheme((theme: Theme) => css`
     font-weight: bold;
     font-family: ${theme.typography.body1.fontFamily};
     display: inline-block;
+    font-size: clamp(1.15rem, 1.25vw, 1.8rem);
     &:hover {
         text-decoration: underline;
     }
+
+    ${mobileCss(`
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+    `)}
 `)
 
 const AddressStyle = withMyTheme((theme: Theme) => css`
     color: ${theme.palette.secondary.dark};
-    font-size: 1.1rem;
+    font-size: clamp(1.7rem, 2vw, 3rem);
     margin: 0.5rem 0 1.5rem 0;
     font-family: ${theme.typography.body1.fontFamily};
+    ${mobileCss(`
+        text-align: center;
+    `)}
 `)
 
 const MapUnavailableStyle = withMyTheme((theme: Theme) => css`
@@ -124,32 +161,32 @@ const DEFAULT_CENTER = {
 export const Location = () => {
     const { t } = useTranslation()
     const [errorMessage, setErrorMessage] = useState<string | null>(null)
-    
+
     // Access environment variables (they should already exist in your .env file)
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || ''
     const mapId = process.env.REACT_APP_GOOGLE_MAPS_MAP_ID || ''
-    
+
     // Libraries array defined simply to avoid type errors
     const libraries: any[] = ['places']
-    
+
     const { isLoaded, loadError } = useJsApiLoader({
         googleMapsApiKey: apiKey,
         mapIds: [mapId],
         libraries
     })
-    
+
     useEffect(() => {
         // Debug logging
         console.log('Google Maps Environment Variables:')
         console.log('- API Key exists:', !!apiKey, apiKey ? `(length: ${apiKey.length})` : '')
         console.log('- Map ID exists:', !!mapId, mapId || '(none)')
-        
+
         if (loadError) {
             console.error('Error loading Google Maps:', loadError)
             setErrorMessage(`Failed to load Google Maps: ${loadError.message}`)
         }
     }, [apiKey, mapId, loadError])
-    
+
     // Create location details
     const locationDetails = {
         lat: DEFAULT_CENTER.lat,
@@ -159,7 +196,7 @@ export const Location = () => {
         description: t('location.description', 'This is where our wedding will take place.'),
         mapLink: t('location.mapLink', 'https://maps.google.com')
     }
-    
+
     const onMapLoad = (map: google.maps.Map) => {
         // Create a simple marker when the map loads
         new window.google.maps.Marker({
@@ -171,7 +208,7 @@ export const Location = () => {
             title: locationDetails.venueName
         })
     }
-    
+
     // Options for the map component
     const mapOptions = {
         disableDefaultUI: false,
@@ -180,7 +217,7 @@ export const Location = () => {
         streetViewControl: true,
         mapId
     }
-    
+
     // Container style for the map
     const containerStyle = {
         width: '100%',
