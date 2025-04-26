@@ -21,7 +21,7 @@ if gh repo view "$ORG_NAME/$REPO_NAME" > /dev/null 2>&1; then
   echo "Repository already exists. Skipping creation."
 else
   echo "Repository does not exist. Creating it..."
-  gh repo create "$ORG_NAME/$REPO_NAME" --private --confirm
+  gh repo create "$ORG_NAME/$REPO_NAME" --public --confirm
 fi
 
 # 3. Add new remote and push current branch
