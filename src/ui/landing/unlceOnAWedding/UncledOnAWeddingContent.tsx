@@ -66,7 +66,7 @@ const ButtonSpacer = withMyTheme(() => css`
 `)
 
 export const FIRST_TEMPLATE_URL = 'https://dorotaiszymon.weddie.site'
-export const SECOND_TEMPLATE_URL = 'https://monikaikarol.pl'
+export const SECOND_TEMPLATE_URL = 'https://ameliaioliwer.weddie.site'
 
 export const UncleOnAWeddingContent = () => {
     const { t } = useTranslation()
