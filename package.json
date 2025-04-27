@@ -31,6 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
+    "prepare": "husky",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@types/react-i18next": "^8.1.0",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7"
   }
 }

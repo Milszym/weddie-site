@@ -4,6 +4,18 @@
 # - gh (GitHub CLI) installed and authenticated
 # - git installed
 
+echo "Push to dedicated repo - pre-push script"
+
+# Get the current branch name
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$current_branch" = "main" ]; then
+  echo "You're on 'main' branch. Skipping push to the other repo."
+  exit 0
+fi
+
+echo "On branch '$current_branch'. Proceeding with push to other repo."
+
 # Settings
 ORG_NAME="Milszym"
 
