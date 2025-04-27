@@ -45,6 +45,6 @@ if ! git remote | grep -q "$REPO_NAME"; then
 fi
 
 # Push current branch to the new repository
-git push "$REPO_NAME" "$BRANCH_NAME:main" --force
+git push "$REPO_NAME" "$BRANCH_NAME:main" --force --no-verify
 
 echo "Done!"
