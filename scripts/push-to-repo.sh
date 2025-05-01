@@ -44,6 +44,33 @@ if ! git remote | grep -q "$REPO_NAME"; then
   git remote add "$REPO_NAME" "https://github.com/$ORG_NAME/$REPO_NAME.git"
 fi
 
+# Check if public/CNAME exists
+if [ ! -f "public/CNAME" ]; then
+  echo "public/CNAME file does not exist. Creating it..."
+  # Create the CNAME file with branch name followed by .weddie.site
+  echo "$BRANCH_NAME.weddie.site" > public/CNAME
+  # Add the file to git
+  git add public/CNAME
+  git commit -m "Add CNAME file for $BRANCH_NAME.weddie.site" --no-verify
+  echo "Created and committed public/CNAME with content: $BRANCH_NAME.weddie.site"
+else
+  echo "public/CNAME file already exists. Skipping creation."
+fi
+
+# Read the content of the CNAME file
+CNAME_CONTENT=$(cat public/CNAME)
+echo "CNAME content: $CNAME_CONTENT"
+
+# Update the homepage parameter in package.json
+echo "Updating homepage in package.json to https://$CNAME_CONTENT..."
+HOMEPAGE_VALUE="https://${CNAME_CONTENT}"
+jq --arg newHomepage "$HOMEPAGE_VALUE" '.homepage = $newHomepage' package.json > tmp.$$.json && mv tmp.$$.json package.json
+
+# Add and commit the changes to package.json
+git add package.json
+git commit -m "Update homepage to https://$CNAME_CONTENT" --no-verify
+echo "Updated and committed package.json with homepage: https://$CNAME_CONTENT"
+
 # Push current branch to the new repository
 git push "$REPO_NAME" "$BRANCH_NAME:main" --force --no-verify
 
