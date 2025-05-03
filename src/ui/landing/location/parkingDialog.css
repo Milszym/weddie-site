@@ -1,0 +1,47 @@
+.locationParkingContent {
+    max-width: '50vw';
+    font-family: 'Cormorant';
+    font-weight: 300;
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'center';
+    justify-content: 'center';
+}
+
+.locationParkingDescription {
+    font-size: 1.5em;
+    color: black;
+    margin-top: 1em;
+    font-family: Cormorant;
+    font-weight: 300;
+}
+
+.locationParkingSubdescription {
+    font-size: 1em;
+    color: black;
+    margin-top: 1em;
+    font-family: Cormorant;
+    font-weight: 300;
+}
+
+.locationParkingButton {
+    margin-top: 3vh;
+    font-size: 2.3vh;
+}
+
+.locationParkingImage {
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 3vh;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .locationParkingDescription {
+        font-size: 5vw;
+    }
+
+    .locationParkingSubdescription {
+        font-size: 3vw;
+    }
+}

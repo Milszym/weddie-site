@@ -7,7 +7,11 @@ const ButtonPrimaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => cs
     font-size: 16px;
     padding: 10px 20px;
     font-weight: 500;
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     &.MuiButton-outlined {
         border-color: ${theme.palette.primary.main};
         color: ${theme.palette.primary.main};
@@ -16,7 +20,11 @@ const ButtonPrimaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => cs
             border-color: ${theme.palette.primary.light};
         }
     }
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     &.MuiButton-contained {
         background-color: ${theme.palette.primary.main};
         color: ${theme.palette.primary.contrastText};
@@ -24,7 +32,11 @@ const ButtonPrimaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => cs
             background-color: ${theme.palette.primary.light};
         }
     }
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     ${additionalCss ? additionalCss(theme) : ''}
 `)
 
@@ -32,7 +44,11 @@ const ButtonSecondaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => 
     font-size: 16px;
     padding: 10px 20px;
     font-weight: 500;
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     &.MuiButton-outlined {
         border-color: ${theme.palette.secondary.main};
         color: ${theme.palette.secondary.main};
@@ -40,7 +56,11 @@ const ButtonSecondaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => 
             border-color: ${theme.palette.secondary.light};
         }
     }
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     &.MuiButton-contained {
         background-color: ${theme.palette.secondary.main};
         color: ${theme.palette.secondary.contrastText};
@@ -48,7 +68,11 @@ const ButtonSecondaryStyle = withMyTheme((theme: Theme, additionalCss?: any) => 
             background-color: ${theme.palette.secondary.light};
         }
     }
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     ${additionalCss ? additionalCss(theme) : ''}
 `)
 
@@ -64,6 +88,7 @@ interface MyButtonProps extends Omit<MuiButtonProps, 'css' | 'startIcon'> {
 }
 
 export const MyButton = ({
+<<<<<<< Updated upstream
     text,
     colorVariant = 'primary',
     variant = 'outlined',
@@ -73,6 +98,17 @@ export const MyButton = ({
     type = "button", // Default type is "button"
     ...props // Spread operator to capture all other props
 }: MyButtonProps) => {
+=======
+                             text,
+                             colorVariant = 'primary',
+                             variant = 'outlined',
+                             onClick,
+                             additionalCss,
+                             startIcon,
+                             type = "button", // Default type is "button"
+                             ...props // Spread operator to capture all other props
+                         }: MyButtonProps) => {
+>>>>>>> Stashed changes
     const style = colorVariant === 'secondary' ? ButtonSecondaryStyle : ButtonPrimaryStyle;
 
     return (
