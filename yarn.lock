@@ -1660,6 +1660,13 @@
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-6.4.7.tgz"
   integrity sha512-XjJrKFNt9zAKvcnoIIBquXyFyhfrHYuttqMsoDS7lM7VwufYG4fAPw4kINjBFg++fqXM2BNAuWR9J7XVIuKIKg==
 
+"@mui/icons-material@^6.4.8":
+  version "6.4.11"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-6.4.11.tgz#add406d3d1c82e7aaf49002a8d456fa992e7f3db"
+  integrity sha512-+jjJGIrB1awNbMv4ZVPPdN/p7O1UKFZ+xqRvNIQ8B1KnlID5hPMPBLM6UUbRF4bu3UDCbu79rn9Nye5LGNzmeA==
+  dependencies:
+    "@babel/runtime" "^7.26.0"
+
 "@mui/material@^6.4.7":
   version "6.4.7"
   resolved "https://registry.npmjs.org/@mui/material/-/material-6.4.7.tgz"
@@ -5443,6 +5450,11 @@ human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+husky@^9.1.7:
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-9.1.7.tgz#d46a38035d101b46a70456a850ff4201344c0b2d"
+  integrity sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==
 
 i18next-browser-languagedetector@^8.0.4:
   version "8.0.4"

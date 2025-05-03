@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.8",
     "@mui/material": "^6.4.7",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -30,6 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
+    "prepare": "husky",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -52,6 +54,7 @@
   },
   "devDependencies": {
     "@types/react-i18next": "^8.1.0",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7"
   }
 }
