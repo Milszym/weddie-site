@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import {useTranslation} from "react-i18next"
-import {Fullscreen} from "../../components/Fullscreen"
-import {MyHeader} from "../../components/text/MyHeader"
-import {withMyTheme} from "../../theme/theme"
+import {Fullscreen} from "./components/Fullscreen"
+import {MyHeader} from "./components/text/MyHeader"
+import {withMyTheme} from "./theme/theme"
 import {css, Theme} from "@mui/material"
 import {useEffect, useState} from "react"
-import {MyButton} from "../../components/button/MyButton"
+import {MyButton} from "./components/button/MyButton"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import {tabletCss} from "../../theme/isTablet";
-import {mobileCss} from "../../theme/isMobile";
-import {getHexWithOpacity} from "../../theme/getHexWithOpacity";
+import {tabletCss} from "./theme/isTablet";
+import {mobileCss} from "./theme/isMobile";
+import {getHexWithOpacity} from "./theme/getHexWithOpacity";
 
 const TitleContainerStyle = withMyTheme((theme: Theme) => css`
     text-align: center;

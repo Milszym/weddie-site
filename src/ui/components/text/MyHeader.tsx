@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { Theme } from "@mui/material";
-import { withMyTheme } from "../../theme/theme";
-import { JSX } from "react";
-import { mobileCss } from "ui/theme/isMobile";
+import {css} from "@emotion/react";
+import {Theme} from "@mui/material";
+import {withMyTheme} from "../../theme/theme";
+import {JSX} from "react";
+import {mobileCss} from "../../theme/isMobile";
 
 const HeaderStyle = withMyTheme((theme: Theme, additionalCss?: any) => css`
     color: ${theme.palette.primary.main};

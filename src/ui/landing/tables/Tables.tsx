@@ -1,13 +1,9 @@
-import { useState } from "react";
-import { PeachButton } from "../../common/PeachButton"
-import "./tables.css"
-import emailjs from "emailjs-com";
-import toast from "react-hot-toast";
-import { useTranslation } from "react-i18next";
-import { showToast, ToastPosition, ToastType } from "../../common/toast/toast";
-import { MainConfig } from "../../../config/MainConfig";
-import { checkTable } from "../../../api/tablesApi";
-import { LotteryText } from "./LotteryText";
+import {useState} from "react";
+import {useTranslation} from "react-i18next";
+import {checkTable} from "../../../api/tablesApi";
+import {LotteryText} from "./LotteryText";
+import {PeachButton} from "../../components/button/PeachButton";
+import {showToast, ToastType} from "../../toast/toast/toast";
 
 export const Tables = () => {
 

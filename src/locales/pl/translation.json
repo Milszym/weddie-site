@@ -1,6 +1,56 @@
 {
     "title": {
-        "title": "Weddie' Site",
-        "button": "Sample button"
+        "names": "Dorota i Szymon",
+        "date": "12 Lipca 2025",
+        "calendarEventName": "Ślub i wesele Doroty i Szymona",
+        "addEventToCalendar": "Dodaj do kalendarza",
+        "days": "dni",
+        "hours": "godz",
+        "minutes": "mins",
+        "seconds": "sek"
+    },
+    "location": {
+        "title": "Przywidz, Zielona Brama",
+        "subtitle": "Sala Sopocka",
+        "description1": "Nasza ceremonia zaślubin odbędzie się pod chmurką, tuż obok sali weselnej.",
+        "description2": "Po ceremonii serdecznie zapraszamy Was na przyjęcie weselne, które odbędzie się w Sali Sopockiej tuż obok! 🥂🎶",
+        "seeOnMap": "Zobacz na mapie",
+        "parkingButton": "Parking",
+        "close": "Zamknij",
+        "parking": {
+            "title": "Parking",
+            "description": "Na terenie Zielonej Bramy jest kilka",
+            "free": "darmowych",
+            "descriptionContinued": "parkingów, na pewno znajdziecie dla siebie miejsce!",
+            "clickToOpenMap": "Kliknij na zdjęcie, żeby otworzyć mapę.",
+            "mapAlt": "Mapa parkingu"
+        }
+    },
+    "faq": {
+        "title": "Więcej informacji"
+    },
+    "witnesses": {
+        "title": "Świadkowie",
+        "description": "Nie ma wesela bez świadków, a więc mamy zaszczyt przedstawić Wam te wyjątkowe osoby.",
+        "firstWitness": "Monika",
+        "secondWitness": "Kuba"
+    },
+    "memories": {
+        "title": "Podziel się wspomnieniami",
+        "description": "Podczas wydarzenia śmiało nagrywajcie i róbcie zdjęcia. Będzie nam miło jak podzielicie się nimi wrzucając je do zdalnego folderu:",
+        "gallery": "Galeria"
+    },
+    "rsvp": {
+        "title": "RSVP",
+        "description1": "Prosimy o potwierdzenie swojej obecności na weselu wraz z informacją o tym czy zabieracie ze sobą swoje dzieci i czy chcecie skorzystać z noclegu.",
+        "description2": "Nie możemy się już doczekać aż spędzimy z Wami ten wyjątkowy dzień!",
+        "firstName": "Dorota",
+        "secondName": "Szymon",
+        "who": "Kto?",
+        "email": "Email",
+        "message": "Wiadomość, dieta, informacje o dzieciach i noclegu. W przypadku chęci noclegu, podaj również numer telefonu",
+        "formNotFilledError": "Proszę wypełnić wszystkie pola formularza.",
+        "send": "Wyślij",
+        "thankYou": "Dziękujemy! 😊 <br />Do zobaczenia! 👋"
     }
 }
