@@ -2,8 +2,12 @@
 import Slider from "react-slick";
 import {FaqItem} from "./FaqItems"
 import {useRef, useState} from "react";
-import {css, Theme} from "@mui/material"
+import {css, Icon, Theme} from "@mui/material"
 import {withMyTheme} from "../../theme/theme"
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ArrowBack from '@mui/icons-material/ArrowBackIos';
+import ArrowForward from '@mui/icons-material/ArrowForwardIos';
 
 interface FaqMobileItemsProps {
     mobileItems: FaqItem[]
@@ -11,6 +15,7 @@ interface FaqMobileItemsProps {
 
 const FaqMobileItemsStyle = withMyTheme(() => css`
     width: 100%;
+    position: relative;
 `)
 
 const FaqItemWrapperStyle = withMyTheme(() => css`
@@ -21,7 +26,7 @@ const FaqItemWrapperStyle = withMyTheme(() => css`
 `)
 
 const FaqItemStyle = withMyTheme(() => css`
-    width: 80vw;
+    width: 65vw;
     border-radius: 32px;
     border: 2px solid #daaa98;
     padding: 16px;
@@ -31,35 +36,38 @@ const FaqItemStyle = withMyTheme(() => css`
     justify-content: center;
 `)
 
-const FaqItemTitleStyle = withMyTheme(() => css`
+const FaqItemTitleStyle = withMyTheme((theme) => css`
     font-size: clamp(1rem, 6vw, 2.5rem);
     font-weight: 200;
+    text-align: center;
+    font-family: ${theme.typography.h1.fontFamily};
+    color: ${theme.palette.primary.main};
 `)
 
 const FaqItemDescriptionStyle = withMyTheme((theme: Theme) => css`
     font-size: clamp(1rem, 5vw, 2.5rem);
     font-family: ${theme.typography.body1.fontFamily};
     font-weight: 200;
-    color: black;
+    margin-top: .8rem;
+    color: ${theme.palette.text.primary};
+    text-align: center;
 `)
 
 const ArrowStyle = withMyTheme(() => css`
-    border: solid black;
-    border-width: 0 3px 3px 0;
     position: absolute;
     padding: 3px;
+    transform: scaleY(1.3);
+    top: 50%;
+    opacity: 0.6;
 `)
 
 const RightArrowStyle = withMyTheme(() => css`
-    transform: rotate(-45deg);
-    right: 0;
+    right: 1rem;
     text-align: center;
-    -webkit-transform: rotate(-45deg);
 `)
 
 const LeftArrowStyle = withMyTheme(() => css`
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+    left: 1rem;
 `)
 
 export const FaqMobileItems = ({mobileItems}: FaqMobileItemsProps) => {
@@ -95,27 +103,29 @@ export const FaqMobileItems = ({mobileItems}: FaqMobileItemsProps) => {
 
     return (
         <div css={FaqMobileItemsStyle}>
-            {/*@ts-ignore*/}
-            <Slider {...settings} ref={sliderRef}>
+            <div>
                 <>
-                    {mobileItems.map((faqItem, index) => (
-                        <div key={index} css={FaqItemWrapperStyle}>
-                            <div css={FaqItemWrapperStyle}>
-                                <div css={FaqItemStyle}>
-                                    <div css={FaqItemTitleStyle}>
-                                        {faqItem.title}
-                                    </div>
-                                    <div css={FaqItemDescriptionStyle}>
-                                        {faqItem.description}
+                    {/*@ts-ignore*/}
+                    <Slider {...settings} ref={sliderRef}>
+                        {mobileItems.map((faqItem, index) => (
+                            <div key={index} css={FaqItemWrapperStyle}>
+                                <div css={FaqItemWrapperStyle}>
+                                    <div css={FaqItemStyle}>
+                                        <div css={FaqItemTitleStyle}>
+                                            {faqItem.title}
+                                        </div>
+                                        <div css={FaqItemDescriptionStyle}>
+                                            {faqItem.description}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </Slider>
                 </>
-            </Slider>
-            {/* <div css={[ArrowStyle, LeftArrowStyle]} onClick={slidePrevious}></div> */}
-            {/* <div css={[ArrowStyle, RightArrowStyle]} onClick={slideNext}></div> */}
+            </div>
+            <ArrowBack css={[ArrowStyle, LeftArrowStyle]} onClick={slidePrevious}/>
+            <ArrowForward css={[ArrowStyle, RightArrowStyle]} onClick={slideNext}/>
         </div>
     )
 }

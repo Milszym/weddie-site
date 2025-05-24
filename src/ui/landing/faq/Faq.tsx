@@ -5,7 +5,7 @@ import {FaqMobileItems} from "./FaqMobileItems"
 import {useTranslation} from "react-i18next"
 import {css, Theme} from "@mui/material"
 import {withMyTheme} from "../../theme/theme"
-import {mobileCss} from "../../theme/isMobile"
+import {isMobile, mobileCss} from "../../theme/isMobile"
 
 const FaqContentStyle = withMyTheme(() => css`
     display: flex;
@@ -17,6 +17,9 @@ const FaqContentStyle = withMyTheme(() => css`
     width: 100vw;
     overflow: hidden;
     height: 100vh;
+    ${mobileCss(`
+        justify-content: center;
+    `)}
 `)
 
 const FaqTitleStyle = withMyTheme((theme) => css`
@@ -96,7 +99,7 @@ const FaqItemDescriptionStyle = withMyTheme((theme: Theme) => css`
     font-size: clamp(1rem, 1.3vw, 6rem);
     font-family: ${theme.typography.body1.fontFamily};
     font-weight: 200;
-    color: ${theme.palette.primary.main};
+    color: ${theme.palette.text.primary};
     text-align: center;
     
     ${mobileCss(`
@@ -106,20 +109,6 @@ const FaqItemDescriptionStyle = withMyTheme((theme: Theme) => css`
 
 export const Faq = () => {
     const {t} = useTranslation()
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        checkMobile()
-        window.addEventListener('resize', checkMobile)
-
-        return () => {
-            window.removeEventListener('resize', checkMobile)
-        }
-    }, [])
 
     const [selectedSection, setSelectedSection] = useState<FaqSection>(faqSections[0])
     const changeSection = (newSection: FaqSection) => {
@@ -140,7 +129,7 @@ export const Faq = () => {
                     </div>
                 ))}
             </div>
-            {isMobile ? (
+            {isMobile() ? (
                 <FaqMobileItems mobileItems={selectedSection.faqItems}/>
             ) : (
                 <div css={FaqItemsStyle}>

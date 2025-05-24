@@ -74,6 +74,9 @@ const RsvpButton = withMyTheme(() => css`
     margin-top: 2vh;
     font-size: 1.4rem;
     padding: .5rem 3vw;
+    ${mobileCss(`
+        padding: .5rem 8vw;
+    `)}
 `)
 
 const RsvpOurContacts = withMyTheme(() => css`
